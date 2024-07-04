@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="57"
-  DTS:VersionGUID="{5545BD61-DE09-488C-AE73-0EE17F846528}">
+  DTS:VersionBuild="87"
+  DTS:VersionGUID="{47C10413-0904-498D-A278-541044BAB851}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -173,6 +173,28 @@
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=DESKTOP-JMF4MNO;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{6152FEC4-D6A9-4F43-8231-0D098AA9E7BB}DESKTOP-JMF4MNO;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-SD7BGTJ\SQLEXPRESS.int_2024_G13]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{9EE89D21-E4D2-45F1-BB00-128709067550}"
+      DTS:ObjectName="DESKTOP-SD7BGTJ\SQLEXPRESS.int_2024_G13">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-SD7BGTJ\SQLEXPRESS;Initial Catalog=int_2024_G13;Integrated Security=True;Encrypt=False;Application Name=SSIS-Package-{9EE89D21-E4D2-45F1-BB00-128709067550}DESKTOP-SD7BGTJ\SQLEXPRESS.int_2024_G13;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-SD7BGTJ\SQLEXPRESS.int_2024_G131]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{EAFC0F97-3B78-4694-8930-60A9DE63A1C0}"
+      DTS:ObjectName="DESKTOP-SD7BGTJ\SQLEXPRESS.int_2024_G131">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-SD7BGTJ\SQLEXPRESS;Initial Catalog=int_2024_G13;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{EAFC0F97-3B78-4694-8930-60A9DE63A1C0}DESKTOP-SD7BGTJ\SQLEXPRESS.int_2024_G131;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -379,7 +401,22 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZHz4XdAdO0KKFmnf3ImsrgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACiKjh+YHoFxfhjB+S979ZALE23oNq4wcwHJHJlGFJxEAAAAAAOgAAAAAIAACAAAAAt+RSiUbx5qqsMHlJlvFaX2atclhx4Zidm8BdojdSP7yAAAABb06Ixx24TQ012oN4EeHWPaShq5nKT9OsEuTRxSNieAUAAAACN4/mwPUAvOqpPWgcNi1JjjZpLdX8ImWW39a/hPrLfJl0iojw0UbkXC9liGfFtfJI2rHCV3gGBIsZoPMsyW5gf</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZHz4XdAdO0KKFmnf3ImsrgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACZJTS7V2fYk5WcuAso4KrEGQEJsUxP4UQ37nZGlRz+BwAAAAAOgAAAAAIAACAAAABp0FDBpv6fddA2NMAOhm8p79zHXHHhs+QJut6EzVLQvSAAAAAbiBIJ0oC28gjbrn9hrVO0QZe3nXr/L5G7RBDz4hRCSEAAAAAAt8Nt2GUGsQgpkDE1Bd8tuXIfB10Wocw0o6WqlrUyPhjXvTd+lx2aXl8XBzIUkRnBAAEOIB7tihnf1iEMdQmy</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[tp mysql.tuia_alumnos 2]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{CBB43EF0-DDD6-4EE6-9412-2D9E7A06C2F8}"
+      DTS:ObjectName="tp mysql.tuia_alumnos 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="uid=tuia_alumnos;Dsn=tp mysql;">
+          <DTS:Password
+            DTS:Name="pwd"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZHz4XdAdO0KKFmnf3ImsrgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAChO6srQ3SuE2qb6JiyO98Iqu9bFZvpBs9ugbfZaS98IAAAAAAOgAAAAAIAACAAAACAOj0vat9On7+zAuq1V8OasYsYJqPDtBY6vIbikPoezCAAAADryIWPqrehqxObAmJw35OjAeuDiLlln8LZXbiBc1PDDEAAAAB4GRD0t4DL4hUOMsA0m763X7ZHy8orq02o/B/FY7lDvMnJ6otQW8UAGbMcQNg0Ng/yp6IygFvJSWU/9ldO2DaK</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -397,13 +434,13 @@
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\Contenedor de secuencias\Tarea Flujo de datos"
+          DTS:refId="Package\Contenedor de secuencias\int_employee"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Tarea Flujo de datos"
-          DTS:DTSID="{0A843008-7FA9-4EAE-89DB-5DD7346D2E9C}"
+          DTS:DTSID="{5E6F557F-82C7-4FBC-AE2F-625504DD8B1C}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Tarea Flujo de datos"
+          DTS:ObjectName="int_employee"
           DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
           <DTS:Variables />
           <DTS:ObjectData>
@@ -411,127 +448,150 @@
               version="1">
               <components>
                 <component
-                  refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Columna derivada"
-                  componentClassID="Microsoft.DerivedColumn"
-                  contactInfo="Columna derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
-                  description="Crea nuevos valores de columna aplicando expresiones a las columnas de entrada de la transformación. Crea nuevas columnas o sobrescribe las columnas existentes. Por ejemplo, se concatenan los valores de las columnas 'nombre' y 'apellidos' para crear una columna 'nombre completo'."
-                  name="Columna derivada"
-                  usesDispositions="true">
+                  refId="Package\Contenedor de secuencias\int_employee\int_employees_G13"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+                  description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+                  name="int_employees_G13"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Nombre de la tabla de la base de datos de destino."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"int_employees_G13"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                      expressionType="Notify"
+                      name="BatchSize">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                      expressionType="Notify"
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                      expressionType="Notify"
+                      name="UseBulkInsertWhenPossible">true</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-SD7BGTJ\SQLEXPRESS.int_2024_G13]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-SD7BGTJ\SQLEXPRESS.int_2024_G13]"
+                      description="Administrador de conexiones administrado"
+                      name="IDbConnection" />
+                  </connections>
                   <inputs>
                     <input
-                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Columna derivada.Inputs[Entrada de columna derivada]"
-                      description="Entrada en la transformación Columna derivada"
-                      name="Entrada de columna derivada">
+                      refId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Inputs[Entrada de destino de ADO NET]"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de destino de ADO NET">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Columna derivada.Inputs[Entrada de columna derivada].Columns[presentacion]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="presentacion"
-                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[presentacion]" />
+                          refId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Inputs[Entrada de destino de ADO NET].Columns[FULL_NAME]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="FULL_NAME"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[FULL_NAME]"
+                          lineageId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].Columns[FULL_NAME]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Inputs[Entrada de destino de ADO NET].Columns[CATEGORY]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="CATEGORY"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[CATEGORY]"
+                          lineageId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].Columns[CATEGORY]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Inputs[Entrada de destino de ADO NET].Columns[EMPLOYMENT_DATE]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="EMPLOYMENT_DATE"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[EMPLOYMENT_DATE]"
+                          lineageId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].Columns[EMPLOYMENT_DATE]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Inputs[Entrada de destino de ADO NET].Columns[BIRTH_DATE]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="BIRTH_DATE"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[BIRTH_DATE]"
+                          lineageId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].Columns[BIRTH_DATE]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Inputs[Entrada de destino de ADO NET].Columns[EDUCATION_LEVEL]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="EDUCATION_LEVEL"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[EDUCATION_LEVEL]"
+                          lineageId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].Columns[EDUCATION_LEVEL]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Inputs[Entrada de destino de ADO NET].Columns[GENDER]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="GENDER"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[GENDER]"
+                          lineageId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].Columns[GENDER]" />
                       </inputColumns>
-                      <externalMetadataColumns />
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[FULL_NAME]"
+                          dataType="wstr"
+                          length="255"
+                          name="FULL_NAME" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[CATEGORY]"
+                          dataType="wstr"
+                          length="255"
+                          name="CATEGORY" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[EMPLOYMENT_DATE]"
+                          dataType="wstr"
+                          length="10"
+                          name="EMPLOYMENT_DATE" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[BIRTH_DATE]"
+                          dataType="wstr"
+                          length="10"
+                          name="BIRTH_DATE" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[EDUCATION_LEVEL]"
+                          dataType="wstr"
+                          length="255"
+                          name="EDUCATION_LEVEL" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[GENDER]"
+                          dataType="wstr"
+                          length="255"
+                          name="GENDER" />
+                      </externalMetadataColumns>
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Columna derivada.Outputs[Salida de columna derivada]"
-                      description="Salida predeterminada de la transformación Columna derivada"
-                      exclusionGroup="1"
-                      name="Salida de columna derivada"
-                      synchronousInputId="Package\Contenedor de secuencias\Tarea Flujo de datos\Columna derivada.Inputs[Entrada de columna derivada]">
-                      <outputColumns>
-                        <outputColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Columna derivada.Outputs[Salida de columna derivada].Columns[cantidad]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Cálculo"
-                          errorRowDisposition="FailComponent"
-                          length="50"
-                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Columna derivada.Outputs[Salida de columna derivada].Columns[cantidad]"
-                          name="cantidad"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Expresión de columna derivada"
-                              name="Expression">[TOKEN](#{Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[presentacion]}," ",1)</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Expresión descriptiva de columna derivada"
-                              expressionType="Notify"
-                              name="FriendlyExpression">TOKEN(presentacion," ",1)</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Columna derivada.Outputs[Salida de columna derivada].Columns[medida]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Cálculo"
-                          errorRowDisposition="FailComponent"
-                          length="50"
-                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Columna derivada.Outputs[Salida de columna derivada].Columns[medida]"
-                          name="medida"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Expresión de columna derivada"
-                              name="Expression">[TOKEN](#{Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[presentacion]}," ",2)</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Expresión descriptiva de columna derivada"
-                              expressionType="Notify"
-                              name="FriendlyExpression">TOKEN(presentacion," ",2)</property>
-                          </properties>
-                        </outputColumn>
-                        <outputColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Columna derivada.Outputs[Salida de columna derivada].Columns[presentacion]"
-                          dataType="wstr"
-                          errorOrTruncationOperation="Cálculo"
-                          errorRowDisposition="FailComponent"
-                          length="50"
-                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Columna derivada.Outputs[Salida de columna derivada].Columns[presentacion]"
-                          name="presentacion"
-                          truncationRowDisposition="FailComponent">
-                          <properties>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Expresión de columna derivada"
-                              name="Expression">[TOKEN](#{Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[presentacion]}," ",3)</property>
-                            <property
-                              containsID="true"
-                              dataType="System.String"
-                              description="Expresión descriptiva de columna derivada"
-                              expressionType="Notify"
-                              name="FriendlyExpression">TOKEN(presentacion," ",3)</property>
-                          </properties>
-                        </outputColumn>
-                      </outputColumns>
-                      <externalMetadataColumns />
-                    </output>
-                    <output
-                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Columna derivada.Outputs[Salida de error de columna derivada]"
-                      description="Salida de error de la transformación Columna derivada"
+                      refId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Outputs[Salida de error de destino de ADO NET]"
                       exclusionGroup="1"
                       isErrorOut="true"
-                      name="Salida de error de columna derivada"
-                      synchronousInputId="Package\Contenedor de secuencias\Tarea Flujo de datos\Columna derivada.Inputs[Entrada de columna derivada]">
+                      name="Salida de error de destino de ADO NET"
+                      synchronousInputId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Inputs[Entrada de destino de ADO NET]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                          refId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                          lineageId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                          refId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                          lineageId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -540,7 +600,455 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13"
+                  refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+                  description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+                  name="stg_employees_G13"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [FULL_NAME]
+      ,[CATEGORY]
+      , CONVERT(VARCHAR(10), CAST([EMPLOYMENT_DATE] AS DATE), 23) AS EMPLOYMENT_DATE
+      , CONVERT(VARCHAR(10), CAST(birth_date AS DATE), 23) AS BIRTH_DATE
+      ,[EDUCATION_LEVEL]
+      ,[GENDER]
+FROM [stg_2024_G13].[dbo].[stg_employees_G13];</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                      name="AllowImplicitStringConversion">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Nombre de la tabla de la base de datos de origen."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especificar el modo de recuperar información de columnas externas"
+                      name="AccessMode"
+                      typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-SD7BGTJ\SQLEXPRESS.int_2024_G13]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-SD7BGTJ\SQLEXPRESS.int_2024_G13]"
+                      description="Administrador de conexiones administrado"
+                      name="IDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET]"
+                      name="Salida de origen de ADO NET">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].Columns[FULL_NAME]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].ExternalColumns[FULL_NAME]"
+                          length="255"
+                          lineageId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].Columns[FULL_NAME]"
+                          name="FULL_NAME"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].Columns[CATEGORY]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].ExternalColumns[CATEGORY]"
+                          length="255"
+                          lineageId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].Columns[CATEGORY]"
+                          name="CATEGORY"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].Columns[EMPLOYMENT_DATE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].ExternalColumns[EMPLOYMENT_DATE]"
+                          length="10"
+                          lineageId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].Columns[EMPLOYMENT_DATE]"
+                          name="EMPLOYMENT_DATE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].Columns[BIRTH_DATE]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].ExternalColumns[BIRTH_DATE]"
+                          length="10"
+                          lineageId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].Columns[BIRTH_DATE]"
+                          name="BIRTH_DATE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].Columns[EDUCATION_LEVEL]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].ExternalColumns[EDUCATION_LEVEL]"
+                          length="255"
+                          lineageId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].Columns[EDUCATION_LEVEL]"
+                          name="EDUCATION_LEVEL"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].Columns[GENDER]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].ExternalColumns[GENDER]"
+                          length="255"
+                          lineageId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].Columns[GENDER]"
+                          name="GENDER"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].ExternalColumns[FULL_NAME]"
+                          dataType="wstr"
+                          length="255"
+                          name="FULL_NAME" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].ExternalColumns[CATEGORY]"
+                          dataType="wstr"
+                          length="255"
+                          name="CATEGORY" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].ExternalColumns[EMPLOYMENT_DATE]"
+                          dataType="wstr"
+                          length="10"
+                          name="EMPLOYMENT_DATE" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].ExternalColumns[BIRTH_DATE]"
+                          dataType="wstr"
+                          length="10"
+                          name="BIRTH_DATE" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].ExternalColumns[EDUCATION_LEVEL]"
+                          dataType="wstr"
+                          length="255"
+                          name="EDUCATION_LEVEL" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET].ExternalColumns[GENDER]"
+                          dataType="wstr"
+                          length="255"
+                          name="GENDER" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de error de origen de ADO NET]"
+                      isErrorOut="true"
+                      name="Salida de error de origen de ADO NET">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de error de origen de ADO NET].Columns[FULL_NAME]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de error de origen de ADO NET].Columns[FULL_NAME]"
+                          name="FULL_NAME" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de error de origen de ADO NET].Columns[CATEGORY]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de error de origen de ADO NET].Columns[CATEGORY]"
+                          name="CATEGORY" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de error de origen de ADO NET].Columns[EMPLOYMENT_DATE]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de error de origen de ADO NET].Columns[EMPLOYMENT_DATE]"
+                          name="EMPLOYMENT_DATE" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de error de origen de ADO NET].Columns[BIRTH_DATE]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de error de origen de ADO NET].Columns[BIRTH_DATE]"
+                          name="BIRTH_DATE" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de error de origen de ADO NET].Columns[EDUCATION_LEVEL]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de error de origen de ADO NET].Columns[EDUCATION_LEVEL]"
+                          name="EDUCATION_LEVEL" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de error de origen de ADO NET].Columns[GENDER]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de error de origen de ADO NET].Columns[GENDER]"
+                          name="GENDER" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Contenedor de secuencias\int_employee.Paths[Salida de origen de ADO NET]"
+                  endId="Package\Contenedor de secuencias\int_employee\int_employees_G13.Inputs[Entrada de destino de ADO NET]"
+                  name="Salida de origen de ADO NET"
+                  startId="Package\Contenedor de secuencias\int_employee\stg_employees_G13.Outputs[Salida de origen de ADO NET]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contenedor de secuencias\int_prices"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarea Flujo de datos"
+          DTS:DTSID="{E6BD6C7C-3544-49BD-A267-CE46590E0725}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="int_prices"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contenedor de secuencias\int_productos"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarea Flujo de datos"
+          DTS:DTSID="{0A843008-7FA9-4EAE-89DB-5DD7346D2E9C}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="int_productos"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Contenedor de secuencias\int_productos\Columna derivada"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Columna derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+                  description="Crea nuevos valores de columna aplicando expresiones a las columnas de entrada de la transformación. Crea nuevas columnas o sobrescribe las columnas existentes. Por ejemplo, se concatenan los valores de las columnas 'nombre' y 'apellidos' para crear una columna 'nombre completo'."
+                  name="Columna derivada"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Contenedor de secuencias\int_productos\Columna derivada.Inputs[Entrada de columna derivada]"
+                      description="Entrada en la transformación Columna derivada"
+                      name="Entrada de columna derivada">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\int_productos\Columna derivada.Inputs[Entrada de columna derivada].Columns[envase]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="envase"
+                          errorOrTruncationOperation="Cálculo"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Outputs[Salida de columna derivada].Columns[envase]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expresión de columna derivada"
+                              name="Expression">#{Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Outputs[Salida de columna derivada].Columns[envase]} != "can" ? "bottle" : "can"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expresión descriptiva de columna derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">envase != "can" ? "bottle" : "can"</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\int_productos\Columna derivada.Inputs[Entrada de columna derivada].Columns[medida]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="medida"
+                          errorOrTruncationOperation="Cálculo"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Outputs[Salida de columna derivada].Columns[medida]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expresión de columna derivada"
+                              name="Expression">#{Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Outputs[Salida de columna derivada].Columns[medida]} == "Litter" ? "cm3" : "cm3"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expresión descriptiva de columna derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">medida == "Litter" ? "cm3" : "cm3"</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\int_productos\Columna derivada.Inputs[Entrada de columna derivada].Columns[cantidad_int]"
+                          cachedDataType="i4"
+                          cachedName="cantidad_int"
+                          errorOrTruncationOperation="Cálculo"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Contenedor de secuencias\int_productos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[cantidad_int]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expresión de columna derivada"
+                              name="Expression">#{Package\Contenedor de secuencias\int_productos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[cantidad_int]} &lt;= 2 ? #{Package\Contenedor de secuencias\int_productos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[cantidad_int]} * 1000 : #{Package\Contenedor de secuencias\int_productos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[cantidad_int]}</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expresión descriptiva de columna derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">cantidad_int &lt;= 2 ? cantidad_int * 1000 : cantidad_int</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias\int_productos\Columna derivada.Outputs[Salida de columna derivada]"
+                      description="Salida predeterminada de la transformación Columna derivada"
+                      exclusionGroup="1"
+                      name="Salida de columna derivada"
+                      synchronousInputId="Package\Contenedor de secuencias\int_productos\Columna derivada.Inputs[Entrada de columna derivada]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contenedor de secuencias\int_productos\Columna derivada.Outputs[Salida de error de columna derivada]"
+                      description="Salida de error de la transformación Columna derivada"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de columna derivada"
+                      synchronousInputId="Package\Contenedor de secuencias\int_productos\Columna derivada.Inputs[Entrada de columna derivada]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_productos\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\int_productos\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_productos\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\int_productos\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenedor de secuencias\int_productos\Conversión de datos"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Conversión de datos;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+                  description="Conversión de datos"
+                  name="Conversión de datos"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Contenedor de secuencias\int_productos\Conversión de datos.Inputs[Entrada de conversión de datos]"
+                      name="Entrada de conversión de datos">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\int_productos\Conversión de datos.Inputs[Entrada de conversión de datos].Columns[cantidad]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="cantidad"
+                          lineageId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Outputs[Salida de columna derivada].Columns[cantidad]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias\int_productos\Conversión de datos.Outputs[Salida de conversión de datos]"
+                      exclusionGroup="1"
+                      name="Salida de conversión de datos"
+                      synchronousInputId="Package\Contenedor de secuencias\int_productos\Conversión de datos.Inputs[Entrada de conversión de datos]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_productos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[cantidad_int]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Contenedor de secuencias\int_productos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[cantidad_int]"
+                          name="cantidad_int"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Especifica la columna de entrada usada como origen de datos para la conversión."
+                              name="SourceInputColumnLineageID">#{Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Outputs[Salida de columna derivada].Columns[cantidad]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contenedor de secuencias\int_productos\Conversión de datos.Outputs[Salida de error de conversión de datos]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de conversión de datos"
+                      synchronousInputId="Package\Contenedor de secuencias\int_productos\Conversión de datos.Inputs[Entrada de conversión de datos]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_productos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\int_productos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_productos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\int_productos\Conversión de datos.Outputs[Salida de error de conversión de datos].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenedor de secuencias\int_productos\int_product_G13"
                   componentClassID="Microsoft.ManagedComponentHost"
                   contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
                   description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
@@ -575,115 +1083,101 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Connections[IDbConnection]"
-                      connectionManagerID="Package.ConnectionManagers[DESKTOP-SD7BGTJ\SQLEXPRESS.stg_2024_G131]"
-                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-SD7BGTJ\SQLEXPRESS.stg_2024_G131]"
+                      refId="Package\Contenedor de secuencias\int_productos\int_product_G13.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-SD7BGTJ\SQLEXPRESS.int_2024_G13]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-SD7BGTJ\SQLEXPRESS.int_2024_G13]"
                       description="Administrador de conexiones administrado"
                       name="IDbConnection" />
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Inputs[Entrada de destino de ADO NET]"
+                      refId="Package\Contenedor de secuencias\int_productos\int_product_G13.Inputs[Entrada de destino de ADO NET]"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="Entrada de destino de ADO NET">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Inputs[Entrada de destino de ADO NET].Columns[id]"
+                          refId="Package\Contenedor de secuencias\int_productos\int_product_G13.Inputs[Entrada de destino de ADO NET].Columns[id]"
                           cachedDataType="i4"
                           cachedName="id"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[id]"
-                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[id]" />
+                          externalMetadataColumnId="Package\Contenedor de secuencias\int_productos\int_product_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[id]"
+                          lineageId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[id]" />
                         <inputColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Inputs[Entrada de destino de ADO NET].Columns[descripcion]"
+                          refId="Package\Contenedor de secuencias\int_productos\int_product_G13.Inputs[Entrada de destino de ADO NET].Columns[descripcion]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="50"
                           cachedName="descripcion"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[descripcion]"
-                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[descripcion]" />
+                          externalMetadataColumnId="Package\Contenedor de secuencias\int_productos\int_product_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[descripcion]"
+                          lineageId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[descripcion]" />
                         <inputColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Inputs[Entrada de destino de ADO NET].Columns[presentacion]"
-                          cachedCodepage="1252"
-                          cachedDataType="str"
-                          cachedLength="50"
-                          cachedName="presentacion"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[stg_products_G13.presentacion]"
-                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[presentacion]" />
-                        <inputColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Inputs[Entrada de destino de ADO NET].Columns[cantidad]"
-                          cachedDataType="wstr"
-                          cachedLength="50"
-                          cachedName="cantidad"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[cantidad]"
-                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Columna derivada.Outputs[Salida de columna derivada].Columns[cantidad]" />
-                        <inputColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Inputs[Entrada de destino de ADO NET].Columns[medida]"
+                          refId="Package\Contenedor de secuencias\int_productos\int_product_G13.Inputs[Entrada de destino de ADO NET].Columns[medida]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="medida"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[medida]"
-                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Columna derivada.Outputs[Salida de columna derivada].Columns[medida]" />
+                          externalMetadataColumnId="Package\Contenedor de secuencias\int_productos\int_product_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[medida]"
+                          lineageId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Outputs[Salida de columna derivada].Columns[medida]" />
                         <inputColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Inputs[Entrada de destino de ADO NET].Columns[presentacion1]"
+                          refId="Package\Contenedor de secuencias\int_productos\int_product_G13.Inputs[Entrada de destino de ADO NET].Columns[envase]"
                           cachedDataType="wstr"
                           cachedLength="50"
-                          cachedName="presentacion"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[Columna derivada.presentacion]"
-                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\Columna derivada.Outputs[Salida de columna derivada].Columns[presentacion]" />
+                          cachedName="envase"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\int_productos\int_product_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[envase]"
+                          lineageId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Outputs[Salida de columna derivada].Columns[envase]" />
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\int_productos\int_product_G13.Inputs[Entrada de destino de ADO NET].Columns[cantidad_int]"
+                          cachedDataType="i4"
+                          cachedName="cantidad_int"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\int_productos\int_product_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[cantidad]"
+                          lineageId="Package\Contenedor de secuencias\int_productos\Conversión de datos.Outputs[Salida de conversión de datos].Columns[cantidad_int]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[id]"
+                          refId="Package\Contenedor de secuencias\int_productos\int_product_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[id]"
                           dataType="i4"
                           name="id" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[descripcion]"
+                          refId="Package\Contenedor de secuencias\int_productos\int_product_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[descripcion]"
                           dataType="wstr"
                           length="50"
                           name="descripcion" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[stg_products_G13.presentacion]"
-                          dataType="wstr"
-                          length="50"
-                          name="stg_products_G13.presentacion" />
-                        <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[cantidad]"
-                          dataType="wstr"
-                          length="50"
-                          name="cantidad" />
-                        <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[medida]"
+                          refId="Package\Contenedor de secuencias\int_productos\int_product_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[medida]"
                           dataType="wstr"
                           length="50"
                           name="medida" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[Columna derivada.presentacion]"
+                          refId="Package\Contenedor de secuencias\int_productos\int_product_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[envase]"
                           dataType="wstr"
                           length="50"
-                          name="Columna derivada.presentacion" />
+                          name="envase" />
+                        <externalMetadataColumn
+                          refId="Package\Contenedor de secuencias\int_productos\int_product_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[cantidad]"
+                          dataType="numeric"
+                          name="cantidad"
+                          precision="28" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Outputs[Salida de error de destino de ADO NET]"
+                      refId="Package\Contenedor de secuencias\int_productos\int_product_G13.Outputs[Salida de error de destino de ADO NET]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="Salida de error de destino de ADO NET"
-                      synchronousInputId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Inputs[Entrada de destino de ADO NET]">
+                      synchronousInputId="Package\Contenedor de secuencias\int_productos\int_product_G13.Inputs[Entrada de destino de ADO NET]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                          refId="Package\Contenedor de secuencias\int_productos\int_product_G13.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                          lineageId="Package\Contenedor de secuencias\int_productos\int_product_G13.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                          refId="Package\Contenedor de secuencias\int_productos\int_product_G13.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                          lineageId="Package\Contenedor de secuencias\int_productos\int_product_G13.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -692,7 +1186,7 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13"
+                  refId="Package\Contenedor de secuencias\int_productos\stg_products_G13"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
                   description="Origen de OLE DB"
@@ -741,7 +1235,7 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Connections[OleDbConnection]"
+                      refId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Connections[OleDbConnection]"
                       connectionManagerID="Package.ConnectionManagers[DESKTOP-SD7BGTJ\SQLEXPRESS.stg_2024_G13]"
                       connectionManagerRefId="Package.ConnectionManagers[DESKTOP-SD7BGTJ\SQLEXPRESS.stg_2024_G13]"
                       description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
@@ -749,55 +1243,55 @@
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de origen de OLE DB]"
+                      refId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de origen de OLE DB]"
                       name="Salida de origen de OLE DB">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[id]"
+                          refId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[id]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de origen de OLE DB].ExternalColumns[id]"
-                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[id]"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de origen de OLE DB].ExternalColumns[id]"
+                          lineageId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[id]"
                           name="id"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[descripcion]"
+                          refId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[descripcion]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de origen de OLE DB].ExternalColumns[descripcion]"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de origen de OLE DB].ExternalColumns[descripcion]"
                           length="50"
-                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[descripcion]"
+                          lineageId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[descripcion]"
                           name="descripcion"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[presentacion]"
+                          refId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[presentacion]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversión"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de origen de OLE DB].ExternalColumns[presentacion]"
+                          externalMetadataColumnId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de origen de OLE DB].ExternalColumns[presentacion]"
                           length="50"
-                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[presentacion]"
+                          lineageId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[presentacion]"
                           name="presentacion"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de origen de OLE DB].ExternalColumns[id]"
+                          refId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de origen de OLE DB].ExternalColumns[id]"
                           dataType="i4"
                           name="id" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de origen de OLE DB].ExternalColumns[descripcion]"
+                          refId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de origen de OLE DB].ExternalColumns[descripcion]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="descripcion" />
                         <externalMetadataColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de origen de OLE DB].ExternalColumns[presentacion]"
+                          refId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de origen de OLE DB].ExternalColumns[presentacion]"
                           codePage="1252"
                           dataType="str"
                           length="50"
@@ -805,39 +1299,168 @@
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de error de origen de OLE DB]"
+                      refId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de error de origen de OLE DB]"
                       isErrorOut="true"
                       name="Salida de error de origen de OLE DB">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de error de origen de OLE DB].Columns[id]"
+                          refId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de error de origen de OLE DB].Columns[id]"
                           dataType="i4"
-                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de error de origen de OLE DB].Columns[id]"
+                          lineageId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de error de origen de OLE DB].Columns[id]"
                           name="id" />
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de error de origen de OLE DB].Columns[descripcion]"
+                          refId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de error de origen de OLE DB].Columns[descripcion]"
                           codePage="1252"
                           dataType="str"
                           length="50"
-                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de error de origen de OLE DB].Columns[descripcion]"
+                          lineageId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de error de origen de OLE DB].Columns[descripcion]"
                           name="descripcion" />
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de error de origen de OLE DB].Columns[presentacion]"
+                          refId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de error de origen de OLE DB].Columns[presentacion]"
                           codePage="1252"
                           dataType="str"
                           length="50"
-                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de error de origen de OLE DB].Columns[presentacion]"
+                          lineageId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de error de origen de OLE DB].Columns[presentacion]"
                           name="presentacion" />
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          refId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                          lineageId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          refId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          lineageId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Columna derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+                  description="Crea nuevos valores de columna aplicando expresiones a las columnas de entrada de la transformación. Crea nuevas columnas o sobrescribe las columnas existentes. Por ejemplo, se concatenan los valores de las columnas 'nombre' y 'apellidos' para crear una columna 'nombre completo'."
+                  name="subdivimos la columna presentacion"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Inputs[Entrada de columna derivada]"
+                      description="Entrada en la transformación Columna derivada"
+                      name="Entrada de columna derivada">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Inputs[Entrada de columna derivada].Columns[presentacion]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="presentacion"
+                          lineageId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[presentacion]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Outputs[Salida de columna derivada]"
+                      description="Salida predeterminada de la transformación Columna derivada"
+                      exclusionGroup="1"
+                      name="Salida de columna derivada"
+                      synchronousInputId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Inputs[Entrada de columna derivada]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Outputs[Salida de columna derivada].Columns[cantidad]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Cálculo"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Outputs[Salida de columna derivada].Columns[cantidad]"
+                          name="cantidad"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expresión de columna derivada"
+                              name="Expression">[TOKEN](#{Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[presentacion]}," ",1)</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expresión descriptiva de columna derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">TOKEN(presentacion," ",1)</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Outputs[Salida de columna derivada].Columns[medida]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Cálculo"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Outputs[Salida de columna derivada].Columns[medida]"
+                          name="medida"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expresión de columna derivada"
+                              name="Expression">[TOKEN](#{Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[presentacion]}," ",2)</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expresión descriptiva de columna derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">TOKEN(presentacion," ",2)</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Outputs[Salida de columna derivada].Columns[envase]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Cálculo"
+                          errorRowDisposition="FailComponent"
+                          length="50"
+                          lineageId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Outputs[Salida de columna derivada].Columns[envase]"
+                          name="envase"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expresión de columna derivada"
+                              name="Expression">[TOKEN](#{Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de origen de OLE DB].Columns[presentacion]}," ",3)</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Expresión descriptiva de columna derivada"
+                              expressionType="Notify"
+                              name="FriendlyExpression">TOKEN(presentacion," ",3)</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Outputs[Salida de error de columna derivada]"
+                      description="Salida de error de la transformación Columna derivada"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de columna derivada"
+                      synchronousInputId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Inputs[Entrada de columna derivada]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -848,20 +1471,98 @@
               </components>
               <paths>
                 <path
-                  refId="Package\Contenedor de secuencias\Tarea Flujo de datos.Paths[Salida de columna derivada]"
-                  endId="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13.Inputs[Entrada de destino de ADO NET]"
+                  refId="Package\Contenedor de secuencias\int_productos.Paths[Salida de columna derivada]"
+                  endId="Package\Contenedor de secuencias\int_productos\Conversión de datos.Inputs[Entrada de conversión de datos]"
                   name="Salida de columna derivada"
-                  startId="Package\Contenedor de secuencias\Tarea Flujo de datos\Columna derivada.Outputs[Salida de columna derivada]" />
+                  startId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Outputs[Salida de columna derivada]" />
                 <path
-                  refId="Package\Contenedor de secuencias\Tarea Flujo de datos.Paths[Salida de origen de OLE DB]"
-                  endId="Package\Contenedor de secuencias\Tarea Flujo de datos\Columna derivada.Inputs[Entrada de columna derivada]"
+                  refId="Package\Contenedor de secuencias\int_productos.Paths[Salida de columna derivada1]"
+                  endId="Package\Contenedor de secuencias\int_productos\int_product_G13.Inputs[Entrada de destino de ADO NET]"
+                  name="Salida de columna derivada"
+                  startId="Package\Contenedor de secuencias\int_productos\Columna derivada.Outputs[Salida de columna derivada]" />
+                <path
+                  refId="Package\Contenedor de secuencias\int_productos.Paths[Salida de conversión de datos]"
+                  endId="Package\Contenedor de secuencias\int_productos\Columna derivada.Inputs[Entrada de columna derivada]"
+                  name="Salida de conversión de datos"
+                  startId="Package\Contenedor de secuencias\int_productos\Conversión de datos.Outputs[Salida de conversión de datos]" />
+                <path
+                  refId="Package\Contenedor de secuencias\int_productos.Paths[Salida de origen de OLE DB]"
+                  endId="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion.Inputs[Entrada de columna derivada]"
                   name="Salida de origen de OLE DB"
-                  startId="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13.Outputs[Salida de origen de OLE DB]" />
+                  startId="Package\Contenedor de secuencias\int_productos\stg_products_G13.Outputs[Salida de origen de OLE DB]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contenedor de secuencias\int_tiempo"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarea Ejecutar SQL"
+          DTS:DTSID="{B834933B-A9D5-4E44-9414-CC93FC7CD9ED}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="int_tiempo"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{EAFC0F97-3B78-4694-8930-60A9DE63A1C0}"
+              SQLTask:SqlStatementSource="USE int_2024_G13;&#xA;&#xA;-- Drop the table if it already exists&#xA;IF OBJECT_ID('[dbo].[int_tiempo_G13]', 'U') IS NOT NULL&#xA;BEGIN&#xA;    DROP TABLE [dbo].[int_tiempo_G13];&#xA;END&#xA;&#xA;-- Create the table&#xA;CREATE TABLE [dbo].[int_tiempo_G13](&#xA;    Fecha DATE,&#xA;    Dia INT,&#xA;    Mes INT,&#xA;    NombreMes VARCHAR(20),&#xA;    Año INT,&#xA;    Trimestre INT,&#xA;    Semestre INT,&#xA;    DiaSemana INT,&#xA;    NombreDiaSemana VARCHAR(20),&#xA;    Semana INT,&#xA;    DiaAño INT&#xA;);&#xA;&#xA;-- Truncate the table if needed&#xA;TRUNCATE TABLE [dbo].[int_tiempo_G13];&#xA;WITH Fechas(Fecha) AS (&#xA;    SELECT CAST('1900-01-01' AS DATE)&#xA;    UNION ALL&#xA;    SELECT DATEADD(DAY, 1, Fecha)&#xA;    FROM Fechas&#xA;    WHERE Fecha &lt; '2100-12-31'&#xA;)&#xA;INSERT INTO int_tiempo_G13 (Fecha, Dia, Mes, NombreMes, Año, Trimestre, Semestre, DiaSemana, NombreDiaSemana, Semana, DiaAño)&#xA;SELECT &#xA;    Fecha, &#xA;    DAY(Fecha) AS Dia, &#xA;    MONTH(Fecha) AS Mes, &#xA;    DATENAME(MONTH, Fecha) AS NombreMes, &#xA;    YEAR(Fecha) AS Año, &#xA;    DATEPART(QUARTER, Fecha) AS Trimestre, &#xA;    (DATEPART(QUARTER, Fecha) + 1) / 2 AS Semestre, &#xA;    DATEPART(WEEKDAY, Fecha) AS DiaSemana, &#xA;    DATENAME(WEEKDAY, Fecha) AS NombreDiaSemana, &#xA;    DATEPART(WEEK, Fecha) AS Semana, &#xA;    DATEPART(DAYOFYEAR, Fecha) AS DiaAño&#xA;FROM Fechas&#xA;OPTION (MAXRECURSION 0);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Contenedor de secuencias\Truncar_int"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Tarea Ejecutar SQL"
+          DTS:DTSID="{6280cd0c-2a3d-4e0e-bf74-6da18ece5394}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncar_int"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{EAFC0F97-3B78-4694-8930-60A9DE63A1C0}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [int_2024_G13].[dbo].[int_product_G13]; &#xA;TRUNCATE TABLE [int_2024_G13].[dbo].[int_employees_G13]; &#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
       </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción]"
+          DTS:CreationName=""
+          DTS:DTSID="{96556A47-818E-43BF-8674-08C2BE959D36}"
+          DTS:From="Package\Contenedor de secuencias\Truncar_int"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción"
+          DTS:To="Package\Contenedor de secuencias\int_productos" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{51D99D40-DC98-487D-8DF8-22F9B0E42C6E}"
+          DTS:From="Package\Contenedor de secuencias\Truncar_int"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 1"
+          DTS:To="Package\Contenedor de secuencias\int_tiempo" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{8731F889-3441-4E17-B7BC-F9A195D78617}"
+          DTS:From="Package\Contenedor de secuencias\Truncar_int"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 2"
+          DTS:To="Package\Contenedor de secuencias\int_employee" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{7D037A34-4F75-42F9-A7A4-6D43633C4A02}"
+          DTS:From="Package\Contenedor de secuencias\Truncar_int"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 3"
+          DTS:To="Package\Contenedor de secuencias\int_prices" />
+      </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\staging"
@@ -5273,13 +5974,13 @@ FROM sales.prices;</property>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\staging\Tarea Ejecutar SQL"
+          DTS:refId="Package\staging\Truncar stg"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Tarea Ejecutar SQL"
           DTS:DTSID="{D132430B-7FC5-47A6-BA87-470ED8E2A664}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
-          DTS:ObjectName="Tarea Ejecutar SQL"
+          DTS:ObjectName="Truncar stg"
           DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
           DTS:ThreadHint="0">
           <DTS:Variables />
@@ -5295,7 +5996,7 @@ FROM sales.prices;</property>
           DTS:refId="Package\staging.PrecedenceConstraints[Restricción]"
           DTS:CreationName=""
           DTS:DTSID="{41E6E1E6-1D0A-4C97-A4B7-64615E4DE459}"
-          DTS:From="Package\staging\Tarea Ejecutar SQL"
+          DTS:From="Package\staging\Truncar stg"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restricción"
           DTS:To="Package\staging\Cargar Tablas Mysql" />
@@ -5303,7 +6004,7 @@ FROM sales.prices;</property>
           DTS:refId="Package\staging.PrecedenceConstraints[Restricción 1]"
           DTS:CreationName=""
           DTS:DTSID="{AFAAEADB-D467-428E-ACCE-E79A56DC4075}"
-          DTS:From="Package\staging\Tarea Ejecutar SQL"
+          DTS:From="Package\staging\Truncar stg"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restricción 1"
           DTS:To="Package\staging\Cargar Tablas Excel" />
@@ -5311,7 +6012,7 @@ FROM sales.prices;</property>
           DTS:refId="Package\staging.PrecedenceConstraints[Restricción 2]"
           DTS:CreationName=""
           DTS:DTSID="{3B3FB146-15FB-46B6-9E6E-6EFFFB22F8CC}"
-          DTS:From="Package\staging\Tarea Ejecutar SQL"
+          DTS:From="Package\staging\Truncar stg"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restricción 2"
           DTS:To="Package\staging\Cargar Tablas SqlServer" />
@@ -5319,7 +6020,7 @@ FROM sales.prices;</property>
           DTS:refId="Package\staging.PrecedenceConstraints[Restricción 3]"
           DTS:CreationName=""
           DTS:DTSID="{09EAB732-FACC-49AE-B563-50C65E1522C9}"
-          DTS:From="Package\staging\Tarea Ejecutar SQL"
+          DTS:From="Package\staging\Truncar stg"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restricción 3"
           DTS:To="Package\staging\Cargar Tablas XML" />
@@ -5327,7 +6028,7 @@ FROM sales.prices;</property>
           DTS:refId="Package\staging.PrecedenceConstraints[Restricción 4]"
           DTS:CreationName=""
           DTS:DTSID="{51D3BF93-4BF7-4710-A56B-9542A2A71BCE}"
-          DTS:From="Package\staging\Tarea Ejecutar SQL"
+          DTS:From="Package\staging\Truncar stg"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restricción 4"
           DTS:To="Package\staging\Cargar Tablas TXT" />
@@ -5355,18 +6056,170 @@ FROM sales.prices;</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="180,42"
-          Id="Package\Contenedor de secuencias\Tarea Flujo de datos"
-          TopLeft="43.6111111111112,54.0555555555555" />
+          Size="145,42"
+          Id="Package\Contenedor de secuencias\int_productos"
+          TopLeft="2.6111111111112,93.0555555555555" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Contenedor de secuencias\int_tiempo"
+          TopLeft="198,99" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\Contenedor de secuencias\Truncar_int"
+          TopLeft="274,18" />
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción]"
+          TopLeft="309.75,60">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-234.638888888889,33.0555555555555"
+              Start="0,0"
+              End="-234.638888888889,25.5555555555555">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,7.44538606403013" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,7.44538606403013"
+                    Point2="0,11.4453860640301"
+                    Point3="-4,11.4453860640301" />
+                  <mssgle:LineSegment
+                    End="-230.638888888889,11.4453860640301" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-230.638888888889,11.4453860640301"
+                    Point2="-234.638888888889,11.4453860640301"
+                    Point3="-234.638888888889,15.4453860640301" />
+                  <mssgle:LineSegment
+                    End="-234.638888888889,25.5555555555555" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 1]"
+          TopLeft="341.5,60">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-78.5,39"
+              Start="0,0"
+              End="-78.5,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.5"
+                    Point2="0,19.5"
+                    Point3="-4,19.5" />
+                  <mssgle:LineSegment
+                    End="-74.5,19.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-74.5,19.5"
+                    Point2="-78.5,19.5"
+                    Point3="-78.5,23.5" />
+                  <mssgle:LineSegment
+                    End="-78.5,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Contenedor de secuencias\int_employee"
+          TopLeft="521.5,84" />
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 2]"
+          TopLeft="373.25,60">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="220.75,24"
+              Start="0,0"
+              End="220.75,16.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,4.30992736077482" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,4.30992736077482"
+                    Point2="0,8.30992736077482"
+                    Point3="4,8.30992736077482" />
+                  <mssgle:LineSegment
+                    End="216.75,8.30992736077482" />
+                  <mssgle:CubicBezierSegment
+                    Point1="216.75,8.30992736077482"
+                    Point2="220.75,8.30992736077482"
+                    Point3="220.75,12.3099273607748" />
+                  <mssgle:LineSegment
+                    End="220.75,16.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="126,42"
+          Id="Package\Contenedor de secuencias\int_prices"
+          TopLeft="345.5,107.784552845528" />
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias.PrecedenceConstraints[Restricción 3]"
+          TopLeft="354.2,60">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="54.3,47.7845528455284"
+              Start="0,0"
+              End="54.3,40.2845528455284">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.4112305473014" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.4112305473014"
+                    Point2="0,21.4112305473014"
+                    Point3="4,21.4112305473014" />
+                  <mssgle:LineSegment
+                    End="50.3,21.4112305473014" />
+                  <mssgle:CubicBezierSegment
+                    Point1="50.3,21.4112305473014"
+                    Point2="54.3,21.4112305473014"
+                    Point3="54.3,25.4112305473014" />
+                  <mssgle:LineSegment
+                    End="54.3,40.2845528455284" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="268,201"
-          Size="268,244"
+          PanelSize="706,289"
+          Size="706,332"
           Id="Package\Contenedor de secuencias"
-          TopLeft="427.222222222222,438.75" />
+          TopLeft="47.2222222222219,435.75" />
         <NodeLayout
           Size="179,42"
           Id="Package\staging\Cargar Tablas Excel"
@@ -5388,35 +6241,35 @@ FROM sales.prices;</property>
           Id="Package\staging\Cargar Tablas XML"
           TopLeft="642,139" />
         <NodeLayout
-          Size="176,42"
-          Id="Package\staging\Tarea Ejecutar SQL"
+          Size="134,42"
+          Id="Package\staging\Truncar stg"
           TopLeft="458.5,21.5" />
         <EdgeLayout
           Id="Package\staging.PrecedenceConstraints[Restricción]"
-          TopLeft="490.5,63.5">
+          TopLeft="483.5,63.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-362.5,80.5"
+              EndConnector="-355.5,80.5"
               Start="0,0"
-              End="-362.5,73">
+              End="-355.5,73">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.4666666666667" />
+                    End="0,17.875" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.4666666666667"
-                    Point2="0,21.4666666666667"
-                    Point3="-4,21.4666666666667" />
+                    Point1="0,17.875"
+                    Point2="0,21.875"
+                    Point3="-4,21.875" />
                   <mssgle:LineSegment
-                    End="-358.5,21.4666666666667" />
+                    End="-351.5,21.875" />
                   <mssgle:CubicBezierSegment
-                    Point1="-358.5,21.4666666666667"
-                    Point2="-362.5,21.4666666666667"
-                    Point3="-362.5,25.4666666666667" />
+                    Point1="-351.5,21.875"
+                    Point2="-355.5,21.875"
+                    Point3="-355.5,25.875" />
                   <mssgle:LineSegment
-                    End="-362.5,73" />
+                    End="-355.5,73" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5427,30 +6280,30 @@ FROM sales.prices;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\staging.PrecedenceConstraints[Restricción 1]"
-          TopLeft="518.5,63.5">
+          TopLeft="504.5,63.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-198.5,76"
+              EndConnector="-184.5,76"
               Start="0,0"
-              End="-198.5,68.5">
+              End="-184.5,68.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.8108108108108" />
+                    End="0,26.9380530973451" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.8108108108108"
-                    Point2="0,30.8108108108108"
-                    Point3="-4,30.8108108108108" />
+                    Point1="0,26.9380530973451"
+                    Point2="0,30.9380530973451"
+                    Point3="-4,30.9380530973451" />
                   <mssgle:LineSegment
-                    End="-194.5,30.8108108108108" />
+                    End="-180.5,30.9380530973451" />
                   <mssgle:CubicBezierSegment
-                    Point1="-194.5,30.8108108108108"
-                    Point2="-198.5,30.8108108108108"
-                    Point3="-198.5,34.8108108108108" />
+                    Point1="-180.5,30.9380530973451"
+                    Point2="-184.5,30.9380530973451"
+                    Point3="-184.5,34.9380530973451" />
                   <mssgle:LineSegment
-                    End="-198.5,68.5" />
+                    End="-184.5,68.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5461,13 +6314,13 @@ FROM sales.prices;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\staging.PrecedenceConstraints[Restricción 2]"
-          TopLeft="546.5,63.5">
+          TopLeft="525.5,63.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-31,78"
+              EndConnector="-10,78"
               Start="0,0"
-              End="-31,70.5">
+              End="-10,70.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -5478,13 +6331,13 @@ FROM sales.prices;</property>
                     Point2="0,39"
                     Point3="-4,39" />
                   <mssgle:LineSegment
-                    End="-27,39" />
+                    End="-6,39" />
                   <mssgle:CubicBezierSegment
-                    Point1="-27,39"
-                    Point2="-31,39"
-                    Point3="-31,43" />
+                    Point1="-6,39"
+                    Point2="-10,39"
+                    Point3="-10,43" />
                   <mssgle:LineSegment
-                    End="-31,70.5" />
+                    End="-10,70.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5495,30 +6348,30 @@ FROM sales.prices;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\staging.PrecedenceConstraints[Restricción 3]"
-          TopLeft="574.5,63.5">
+          TopLeft="546.5,63.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="154.5,75.5"
+              EndConnector="182.5,75.5"
               Start="0,0"
-              End="154.5,68">
+              End="182.5,68">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.6081081081081" />
+                    End="0,26.7345132743363" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.6081081081081"
-                    Point2="0,30.6081081081081"
-                    Point3="4,30.6081081081081" />
+                    Point1="0,26.7345132743363"
+                    Point2="0,30.7345132743363"
+                    Point3="4,30.7345132743363" />
                   <mssgle:LineSegment
-                    End="150.5,30.6081081081081" />
+                    End="178.5,30.7345132743363" />
                   <mssgle:CubicBezierSegment
-                    Point1="150.5,30.6081081081081"
-                    Point2="154.5,30.6081081081081"
-                    Point3="154.5,34.6081081081081" />
+                    Point1="178.5,30.7345132743363"
+                    Point2="182.5,30.7345132743363"
+                    Point3="182.5,34.7345132743363" />
                   <mssgle:LineSegment
-                    End="154.5,68" />
+                    End="182.5,68" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5529,30 +6382,30 @@ FROM sales.prices;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\staging.PrecedenceConstraints[Restricción 4]"
-          TopLeft="602.5,63.5">
+          TopLeft="567.5,63.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="320.944444444444,68.0555555555555"
+              EndConnector="355.944444444444,68.055555555556"
               Start="0,0"
-              End="320.944444444444,60.5555555555555">
+              End="355.944444444444,60.555555555556">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.1481481481481" />
+                    End="0,14.4933574879228" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.1481481481481"
-                    Point2="0,18.1481481481481"
-                    Point3="4,18.1481481481481" />
+                    Point1="0,14.4933574879228"
+                    Point2="0,18.4933574879228"
+                    Point3="4,18.4933574879228" />
                   <mssgle:LineSegment
-                    End="316.944444444444,18.1481481481481" />
+                    End="351.944444444444,18.4933574879228" />
                   <mssgle:CubicBezierSegment
-                    Point1="316.944444444444,18.1481481481481"
-                    Point2="320.944444444444,18.1481481481481"
-                    Point3="320.944444444444,22.1481481481481" />
+                    Point1="351.944444444444,18.4933574879228"
+                    Point2="355.944444444444,18.4933574879228"
+                    Point3="355.944444444444,22.4933574879228" />
                   <mssgle:LineSegment
-                    End="320.944444444444,60.5555555555555" />
+                    End="355.944444444444,60.555555555556" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5574,26 +6427,26 @@ FROM sales.prices;</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="50.7222222222222,46.25"
+              EndConnector="-110.277777777778,43.25"
               Start="0,0"
-              End="50.7222222222222,38.75">
+              End="-110.277777777778,35.75">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.125" />
+                    End="0,17.625" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.125"
-                    Point2="0,23.125"
-                    Point3="4,23.125" />
+                    Point1="0,17.625"
+                    Point2="0,21.625"
+                    Point3="-4,21.625" />
                   <mssgle:LineSegment
-                    End="46.7222222222222,23.125" />
+                    End="-106.277777777778,21.625" />
                   <mssgle:CubicBezierSegment
-                    Point1="46.7222222222222,23.125"
-                    Point2="50.7222222222222,23.125"
-                    Point3="50.7222222222222,27.125" />
+                    Point1="-106.277777777778,21.625"
+                    Point2="-110.277777777778,21.625"
+                    Point3="-110.277777777778,25.625" />
                   <mssgle:LineSegment
-                    End="50.7222222222222,38.75" />
+                    End="-110.277777777778,35.75" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5606,32 +6459,32 @@ FROM sales.prices;</property>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Contenedor de secuencias\Tarea Flujo de datos">
+    design-time-name="Package\Contenedor de secuencias\int_productos">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="169,42"
-          Id="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13"
+          Id="Package\Contenedor de secuencias\int_productos\stg_products_G13"
           TopLeft="214,87" />
         <NodeLayout
-          Size="168,42"
-          Id="Package\Contenedor de secuencias\Tarea Flujo de datos\Columna derivada"
-          TopLeft="217,160" />
+          Size="256,42"
+          Id="Package\Contenedor de secuencias\int_productos\subdivimos la columna presentacion"
+          TopLeft="169,165" />
         <EdgeLayout
-          Id="Package\Contenedor de secuencias\Tarea Flujo de datos.Paths[Salida de origen de OLE DB]"
-          TopLeft="299.75,129">
+          Id="Package\Contenedor de secuencias\int_productos.Paths[Salida de origen de OLE DB]"
+          TopLeft="297.75,129">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31"
+              EndConnector="0,36"
               Start="0,0"
-              End="0,23.5">
+              End="0,28.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.5" />
+                    End="0,28.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5642,22 +6495,74 @@ FROM sales.prices;</property>
         </EdgeLayout>
         <NodeLayout
           Size="160,42"
-          Id="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13"
-          TopLeft="223,245" />
+          Id="Package\Contenedor de secuencias\int_productos\int_product_G13"
+          TopLeft="220,410" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Contenedor de secuencias\int_productos\Conversión de datos"
+          TopLeft="207,242" />
         <EdgeLayout
-          Id="Package\Contenedor de secuencias\Tarea Flujo de datos.Paths[Salida de columna derivada]"
-          TopLeft="302,202">
+          Id="Package\Contenedor de secuencias\int_productos.Paths[Salida de columna derivada]"
+          TopLeft="297,207">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43"
+              EndConnector="0,35"
               Start="0,0"
-              End="0,35.5">
+              End="0,27.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.5" />
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Contenedor de secuencias\int_productos\Columna derivada"
+          TopLeft="216.5,322.5" />
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias\int_productos.Paths[Salida de conversión de datos]"
+          TopLeft="298.75,284">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.5"
+              Start="0,0"
+              End="0,31">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias\int_productos.Paths[Salida de columna derivada1]"
+          TopLeft="300.25,364.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.5"
+              Start="0,0"
+              End="0,38">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5673,7 +6578,7 @@ FROM sales.prices;</property>
     design-time-name="Package\staging\Cargar Tablas Excel">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="180,42"
           Id="Package\staging\Cargar Tablas Excel\stg_employees_G13"
@@ -5721,7 +6626,9 @@ FROM sales.prices;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5755,7 +6662,9 @@ FROM sales.prices;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -5817,11 +6726,7 @@ FROM sales.prices;</property>
     design-time-name="Package\staging\Cargar Tablas Mysql">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="187,42"
-          Id="Package\staging\Cargar Tablas Mysql\stg_billing_detail_G13"
-          TopLeft="383,245" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="160,42"
           Id="Package\staging\Cargar Tablas Mysql\stg_mysql_biling"
@@ -5835,6 +6740,10 @@ FROM sales.prices;</property>
           Id="Package\staging\Cargar Tablas Mysql\stg_mysql_biling_detail"
           TopLeft="378,141" />
         <NodeLayout
+          Size="155,42"
+          Id="Package\staging\Cargar Tablas Mysql\stg_billing_G13"
+          TopLeft="201.5,247.5" />
+        <NodeLayout
           Size="164,42"
           Id="Package\staging\Cargar Tablas Mysql\stg_mysql_prices"
           TopLeft="814.5,140.5" />
@@ -5843,9 +6752,9 @@ FROM sales.prices;</property>
           Id="Package\staging\Cargar Tablas Mysql\stg_discount_G13"
           TopLeft="602,241" />
         <NodeLayout
-          Size="155,42"
-          Id="Package\staging\Cargar Tablas Mysql\stg_billing_G13"
-          TopLeft="201.5,247.5" />
+          Size="187,42"
+          Id="Package\staging\Cargar Tablas Mysql\stg_billing_detail_G13"
+          TopLeft="383,245" />
         <NodeLayout
           Size="176,42"
           Id="Package\staging\Cargar Tablas Mysql\stg_mysql_discount"
@@ -5869,7 +6778,9 @@ FROM sales.prices;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5891,7 +6802,9 @@ FROM sales.prices;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5913,7 +6826,9 @@ FROM sales.prices;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -5935,7 +6850,9 @@ FROM sales.prices;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6029,15 +6946,15 @@ FROM sales.prices;</property>
     design-time-name="Package\staging\Cargar Tablas SqlServer">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="149,42"
-          Id="Package\staging\Cargar Tablas SqlServer\stg_billing_old"
-          TopLeft="245,98" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="176,42"
           Id="Package\staging\Cargar Tablas SqlServer\stg_billing_old_G13"
           TopLeft="243,204" />
+        <NodeLayout
+          Size="149,42"
+          Id="Package\staging\Cargar Tablas SqlServer\stg_billing_old"
+          TopLeft="245,98" />
         <EdgeLayout
           Id="Package\staging\Cargar Tablas SqlServer.Paths[Salida de origen de OLE DB]"
           TopLeft="319.5,140">
@@ -6069,7 +6986,9 @@ FROM sales.prices;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -6102,6 +7021,22 @@ FROM sales.prices;</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="152,42"
+          Id="Package\staging\Cargar Tablas TXT\stg_stock_G13"
+          TopLeft="385,216" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\staging\Cargar Tablas TXT\stg_products_G13"
+          TopLeft="155,205" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\staging\Cargar Tablas TXT\stg_regions_G13"
+          TopLeft="606,207" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\staging\Cargar Tablas TXT\Stock TXT"
+          TopLeft="384.307689591096,59.461536031503" />
+        <NodeLayout
           Size="143,42"
           Id="Package\staging\Cargar Tablas TXT\Regions TXT"
           TopLeft="599.692304895474,53.461536031503" />
@@ -6109,48 +7044,32 @@ FROM sales.prices;</property>
           Size="146,42"
           Id="Package\staging\Cargar Tablas TXT\Products TXT"
           TopLeft="182.307689591096,59.3846144905457" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\staging\Cargar Tablas TXT\Stock TXT"
-          TopLeft="384.307689591096,59.461536031503" />
-        <NodeLayout
-          Size="169,42"
-          Id="Package\staging\Cargar Tablas TXT\stg_products_G13"
-          TopLeft="155,205" />
-        <NodeLayout
-          Size="152,42"
-          Id="Package\staging\Cargar Tablas TXT\stg_stock_G13"
-          TopLeft="385,216" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\staging\Cargar Tablas TXT\stg_regions_G13"
-          TopLeft="606,207" />
         <EdgeLayout
-          Id="Package\staging\Cargar Tablas TXT.Paths[Flat File Source Output]"
-          TopLeft="255.307689591096,101.384614490546">
+          Id="Package\staging\Cargar Tablas TXT.Paths[Flat File Source Output2]"
+          TopLeft="449.307689591096,101.461536031503">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-15.807689591096,103.615385509454"
+              EndConnector="11.692310408904,114.538463968497"
               Start="0,0"
-              End="-15.807689591096,96.1153855094543">
+              End="11.692310408904,107.038463968497">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.8076927547271" />
+                    End="0,53.2692319842485" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,47.8076927547271"
-                    Point2="0,51.8076927547271"
-                    Point3="-4,51.8076927547271" />
+                    Point1="0,53.2692319842485"
+                    Point2="0,57.2692319842485"
+                    Point3="4,57.2692319842485" />
                   <mssgle:LineSegment
-                    End="-11.807689591096,51.8076927547271" />
+                    End="7.69231040890401,57.2692319842485" />
                   <mssgle:CubicBezierSegment
-                    Point1="-11.807689591096,51.8076927547271"
-                    Point2="-15.807689591096,51.8076927547271"
-                    Point3="-15.807689591096,55.8076927547271" />
+                    Point1="7.69231040890401,57.2692319842485"
+                    Point2="11.692310408904,57.2692319842485"
+                    Point3="11.692310408904,61.2692319842485" />
                   <mssgle:LineSegment
-                    End="-15.807689591096,96.1153855094543" />
+                    End="11.692310408904,107.038463968497" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6194,31 +7113,31 @@ FROM sales.prices;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\staging\Cargar Tablas TXT.Paths[Flat File Source Output2]"
-          TopLeft="449.307689591096,101.461536031503">
+          Id="Package\staging\Cargar Tablas TXT.Paths[Flat File Source Output]"
+          TopLeft="255.307689591096,101.384614490546">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="11.692310408904,114.538463968497"
+              EndConnector="-15.807689591096,103.615385509454"
               Start="0,0"
-              End="11.692310408904,107.038463968497">
+              End="-15.807689591096,96.1153855094543">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.2692319842485" />
+                    End="0,47.8076927547271" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,53.2692319842485"
-                    Point2="0,57.2692319842485"
-                    Point3="4,57.2692319842485" />
+                    Point1="0,47.8076927547271"
+                    Point2="0,51.8076927547271"
+                    Point3="-4,51.8076927547271" />
                   <mssgle:LineSegment
-                    End="7.69231040890401,57.2692319842485" />
+                    End="-11.807689591096,51.8076927547271" />
                   <mssgle:CubicBezierSegment
-                    Point1="7.69231040890401,57.2692319842485"
-                    Point2="11.692310408904,57.2692319842485"
-                    Point3="11.692310408904,61.2692319842485" />
+                    Point1="-11.807689591096,51.8076927547271"
+                    Point2="-15.807689591096,51.8076927547271"
+                    Point3="-15.807689591096,55.8076927547271" />
                   <mssgle:LineSegment
-                    End="11.692310408904,107.038463968497" />
+                    End="-15.807689591096,96.1153855094543" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6260,13 +7179,9 @@ FROM sales.prices;</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="167,42"
-          Id="Package\staging\Cargar Tablas XML\customer_R_XML"
-          TopLeft="282,68" />
-        <NodeLayout
-          Size="164,42"
-          Id="Package\staging\Cargar Tablas XML\stg_clientes_G13"
-          TopLeft="473,349" />
+          Size="147,42"
+          Id="Package\staging\Cargar Tablas XML\Unión de todo"
+          TopLeft="471,270" />
         <NodeLayout
           Size="169,42"
           Id="Package\staging\Cargar Tablas XML\customer_W_XML"
@@ -6276,83 +7191,31 @@ FROM sales.prices;</property>
           Id="Package\staging\Cargar Tablas XML\Clientes minoristas"
           TopLeft="278,149" />
         <NodeLayout
+          Size="164,42"
+          Id="Package\staging\Cargar Tablas XML\stg_clientes_G13"
+          TopLeft="465,358" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\staging\Cargar Tablas XML\customer_R_XML"
+          TopLeft="282,68" />
+        <NodeLayout
           Size="175,42"
           Id="Package\staging\Cargar Tablas XML\Clientes mayoristas"
           TopLeft="586,152" />
-        <NodeLayout
-          Size="147,42"
-          Id="Package\staging\Cargar Tablas XML\Unión de todo"
-          TopLeft="471,270" />
         <EdgeLayout
-          Id="Package\staging\Cargar Tablas XML.Paths[cliente]"
-          TopLeft="364.75,110">
+          Id="Package\staging\Cargar Tablas XML.Paths[Salida de Unión de todo 1]"
+          TopLeft="545.75,312">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39"
+              EndConnector="0,46"
               Start="0,0"
-              End="0,31.5">
+              End="0,38.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\staging\Cargar Tablas XML.Paths[cliente1]"
-          TopLeft="674,113">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39"
-              Start="0,0"
-              End="0,31.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\staging\Cargar Tablas XML.Paths[Salida de columna derivada]"
-          TopLeft="364,191">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="180.5,79"
-              Start="0,0"
-              End="180.5,71.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.5"
-                    Point2="0,39.5"
-                    Point3="4,39.5" />
-                  <mssgle:LineSegment
-                    End="176.5,39.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="176.5,39.5"
-                    Point2="180.5,39.5"
-                    Point3="180.5,43.5" />
-                  <mssgle:LineSegment
-                    End="180.5,71.5" />
+                    End="0,38.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6396,31 +7259,75 @@ FROM sales.prices;</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\staging\Cargar Tablas XML.Paths[Salida de Unión de todo 1]"
-          TopLeft="544.5,312">
+          Id="Package\staging\Cargar Tablas XML.Paths[Salida de columna derivada]"
+          TopLeft="364,191">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="10.5,37"
+              EndConnector="180.5,79"
               Start="0,0"
-              End="10.5,29.5">
+              End="180.5,71.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.5" />
+                    End="0,35.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.5"
-                    Point2="0,18.5"
-                    Point3="4,18.5" />
+                    Point1="0,35.5"
+                    Point2="0,39.5"
+                    Point3="4,39.5" />
                   <mssgle:LineSegment
-                    End="6.5,18.5" />
+                    End="176.5,39.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="6.5,18.5"
-                    Point2="10.5,18.5"
-                    Point3="10.5,22.5" />
+                    Point1="176.5,39.5"
+                    Point2="180.5,39.5"
+                    Point3="180.5,43.5" />
                   <mssgle:LineSegment
-                    End="10.5,29.5" />
+                    End="180.5,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\staging\Cargar Tablas XML.Paths[cliente1]"
+          TopLeft="674,113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\staging\Cargar Tablas XML.Paths[cliente]"
+          TopLeft="364.75,110">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39"
+              Start="0,0"
+              End="0,31.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6441,7 +7348,7 @@ FROM sales.prices;</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Contenedor de secuencias\Tarea Flujo de datos\stg_products_G13">
+    design-time-name="Package\Contenedor de secuencias\int_productos\stg_products_G13">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6454,7 +7361,61 @@ FROM sales.prices;</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Contenedor de secuencias\Tarea Flujo de datos\int_product_G13">
+    design-time-name="Package\Contenedor de secuencias\int_productos\int_product_G13">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Contenedor de secuencias\int_employee">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Contenedor de secuencias\int_employee\stg_employees_G13"
+          TopLeft="35.5,35.5" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Contenedor de secuencias\int_employee\int_employees_G13"
+          TopLeft="44,165" />
+        <EdgeLayout
+          Id="Package\Contenedor de secuencias\int_employee.Paths[Salida de origen de ADO NET]"
+          TopLeft="129,77.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,87.5"
+              Start="0,0"
+              End="0,80">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,80" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contenedor de secuencias\int_employee\stg_employees_G13">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Contenedor de secuencias\int_employee\int_employees_G13">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
