@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="158"
-  DTS:VersionGUID="{3E0FC2EA-A5C8-4C42-9960-48413D7450B3}">
+  DTS:VersionBuild="175"
+  DTS:VersionGUID="{BD4AEC23-C8D1-4839-A6E0-1C30067CC2FE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -411,7 +411,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZHz4XdAdO0KKFmnf3ImsrgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAClh8R/U9+ZSRK91ftzbNevzsi/BEedDCNMJmNMEUdikgAAAAAOgAAAAAIAACAAAABcMSZkux0SVrN/g8/73NLUlKjYTDADXDMmky1arvvf3CAAAADRsfNusK6IViSYa3yeTU1PE96pGC/0g0YZVzWtAHC4v0AAAADBKk9l0+D+9aiZV6DbhJDd3AjrvfwjwPJHvqaLfhawNFuMKgZ12dHlNBU+8MAjOxP4ETm96p45cvihnEstP1jW</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZHz4XdAdO0KKFmnf3ImsrgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABNtOmRJwkgZQ1kQqc8JHxNls4iWYtUq59MbuklSWKGBQAAAAAOgAAAAAIAACAAAAAit5tooRnbNzgVcPdpiR8tz98YQI+9YOz7a4R0ZZeNmiAAAADxGzAFO7gBaRIMWl7Pmrh0aKI+PO4y6QC3jvQbZXwwhUAAAAAtzaAMwyxEMuoAJ2aX5CKM3kxyD/gh0aR9ahd1tD2FsvMoM7NoilqOM7/H2xlIXfSlil0Nm27tI7OM5K2L5u6X</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -426,7 +426,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZHz4XdAdO0KKFmnf3ImsrgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB52Qt189IKA7Y1h9VuSUq8PGGxpel31gcoyMwPXb5SWAAAAAAOgAAAAAIAACAAAADIDaoRumIiI3kytSnjvllRp66tOwmnnMg8ftrETHuryyAAAADU99tGiRW0qFQ+jhplm4b3shrsi0WvSvRvitVTRAeAU0AAAACtB5k6pTCMtrJk1W+KDY64TpONX5ucFcsIbz4w8tM1pS4MoVR+n7tWL9dV3k6W8CXuuhABJLcQzyjZ8DJ6829H</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAZHz4XdAdO0KKFmnf3ImsrgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADT0U6YNBSqfU86bMeEsu4EqR0zqKn0hTQf5qRiSvhZ+gAAAAAOgAAAAAIAACAAAADICUWexNY6oVAeGjasMSxZh41pU2Xml5QsXZA7gAxfkCAAAAA+IcjV77on/W3qnjn30H/SxWVWp3Qjj5DOMLOozo41/UAAAAAhrOwnYIgETvj6R2BnxFoBZKHAuJgo1UiN+ZxWohSksF95+ESAtbZKFu1UaC+XGM9MK7eSx7Q9DMIPSCPCNNVs</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -542,6 +542,12 @@
                           cachedName="BIRTH_DATE"
                           externalMetadataColumnId="Package\datawarehouse\dim_clientes\dim_clientes_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[birth_date]"
                           lineageId="Package\datawarehouse\dim_clientes\int_clientes_G13.Outputs[Salida de origen de ADO NET].Columns[BIRTH_DATE]" />
+                        <inputColumn
+                          refId="Package\datawarehouse\dim_clientes\dim_clientes_G13.Inputs[Entrada de destino de ADO NET].Columns[CUSTOMER_ID]"
+                          cachedDataType="i4"
+                          cachedName="CUSTOMER_ID"
+                          externalMetadataColumnId="Package\datawarehouse\dim_clientes\dim_clientes_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[cliente_id]"
+                          lineageId="Package\datawarehouse\dim_clientes\int_clientes_G13.Outputs[Salida de origen de ADO NET].Columns[CUSTOMER_ID]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -549,6 +555,10 @@
                           refId="Package\datawarehouse\dim_clientes\dim_clientes_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[cliente_key]"
                           dataType="i4"
                           name="cliente_key" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\dim_clientes\dim_clientes_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[cliente_id]"
+                          dataType="i4"
+                          name="cliente_id" />
                         <externalMetadataColumn
                           refId="Package\datawarehouse\dim_clientes\dim_clientes_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[full_name]"
                           dataType="wstr"
@@ -610,7 +620,8 @@
                       expressionType="Notify"
                       name="SqlCommand"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT
-      [FULL_NAME]
+      [CUSTOMER_ID]
+      ,[FULL_NAME]
       ,[CATEGORY]
       ,[Copy of ZIPCODE] AS REGION_KEY
       ,[Copy of BIRTH_DATE] AS BIRTH_DATE
@@ -651,6 +662,15 @@
                       refId="Package\datawarehouse\dim_clientes\int_clientes_G13.Outputs[Salida de origen de ADO NET]"
                       name="Salida de origen de ADO NET">
                       <outputColumns>
+                        <outputColumn
+                          refId="Package\datawarehouse\dim_clientes\int_clientes_G13.Outputs[Salida de origen de ADO NET].Columns[CUSTOMER_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\datawarehouse\dim_clientes\int_clientes_G13.Outputs[Salida de origen de ADO NET].ExternalColumns[CUSTOMER_ID]"
+                          lineageId="Package\datawarehouse\dim_clientes\int_clientes_G13.Outputs[Salida de origen de ADO NET].Columns[CUSTOMER_ID]"
+                          name="CUSTOMER_ID"
+                          truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\datawarehouse\dim_clientes\int_clientes_G13.Outputs[Salida de origen de ADO NET].Columns[FULL_NAME]"
                           dataType="wstr"
@@ -693,6 +713,10 @@
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
+                          refId="Package\datawarehouse\dim_clientes\int_clientes_G13.Outputs[Salida de origen de ADO NET].ExternalColumns[CUSTOMER_ID]"
+                          dataType="i4"
+                          name="CUSTOMER_ID" />
+                        <externalMetadataColumn
                           refId="Package\datawarehouse\dim_clientes\int_clientes_G13.Outputs[Salida de origen de ADO NET].ExternalColumns[FULL_NAME]"
                           dataType="wstr"
                           length="255"
@@ -717,6 +741,11 @@
                       isErrorOut="true"
                       name="Salida de error de origen de ADO NET">
                       <outputColumns>
+                        <outputColumn
+                          refId="Package\datawarehouse\dim_clientes\int_clientes_G13.Outputs[Salida de error de origen de ADO NET].Columns[CUSTOMER_ID]"
+                          dataType="i4"
+                          lineageId="Package\datawarehouse\dim_clientes\int_clientes_G13.Outputs[Salida de error de origen de ADO NET].Columns[CUSTOMER_ID]"
+                          name="CUSTOMER_ID" />
                         <outputColumn
                           refId="Package\datawarehouse\dim_clientes\int_clientes_G13.Outputs[Salida de error de origen de ADO NET].Columns[FULL_NAME]"
                           dataType="wstr"
@@ -831,6 +860,12 @@
                       name="Entrada de destino de ADO NET">
                       <inputColumns>
                         <inputColumn
+                          refId="Package\datawarehouse\dim_empleado\dim_empleados_G13.Inputs[Entrada de destino de ADO NET].Columns[empleado_id]"
+                          cachedDataType="i4"
+                          cachedName="empleado_id"
+                          externalMetadataColumnId="Package\datawarehouse\dim_empleado\dim_empleados_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[empleado_id]"
+                          lineageId="Package\datawarehouse\dim_empleado\int_empleados_G13.Outputs[Salida de origen de ADO NET].Columns[empleado_id]" />
+                        <inputColumn
                           refId="Package\datawarehouse\dim_empleado\dim_empleados_G13.Inputs[Entrada de destino de ADO NET].Columns[nombre_completo]"
                           cachedDataType="wstr"
                           cachedLength="255"
@@ -877,6 +912,10 @@
                           refId="Package\datawarehouse\dim_empleado\dim_empleados_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[empleado_key]"
                           dataType="i4"
                           name="empleado_key" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\dim_empleado\dim_empleados_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[empleado_id]"
+                          dataType="i4"
+                          name="empleado_id" />
                         <externalMetadataColumn
                           refId="Package\datawarehouse\dim_empleado\dim_empleados_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[nombre_completo]"
                           dataType="wstr"
@@ -948,7 +987,8 @@
                       expressionType="Notify"
                       name="SqlCommand"
                       UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
-      [FULL_NAME] as nombre_completo
+      cast([EMPLOYEE_ID] as int) as empleado_id
+      ,[FULL_NAME] as nombre_completo
       ,[CATEGORY] as categoria
       ,[EDUCATION_LEVEL] as educacion
       ,[GENDER] as genero
@@ -991,6 +1031,15 @@
                       refId="Package\datawarehouse\dim_empleado\int_empleados_G13.Outputs[Salida de origen de ADO NET]"
                       name="Salida de origen de ADO NET">
                       <outputColumns>
+                        <outputColumn
+                          refId="Package\datawarehouse\dim_empleado\int_empleados_G13.Outputs[Salida de origen de ADO NET].Columns[empleado_id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\datawarehouse\dim_empleado\int_empleados_G13.Outputs[Salida de origen de ADO NET].ExternalColumns[empleado_id]"
+                          lineageId="Package\datawarehouse\dim_empleado\int_empleados_G13.Outputs[Salida de origen de ADO NET].Columns[empleado_id]"
+                          name="empleado_id"
+                          truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\datawarehouse\dim_empleado\int_empleados_G13.Outputs[Salida de origen de ADO NET].Columns[nombre_completo]"
                           dataType="wstr"
@@ -1053,6 +1102,10 @@
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
+                          refId="Package\datawarehouse\dim_empleado\int_empleados_G13.Outputs[Salida de origen de ADO NET].ExternalColumns[empleado_id]"
+                          dataType="i4"
+                          name="empleado_id" />
+                        <externalMetadataColumn
                           refId="Package\datawarehouse\dim_empleado\int_empleados_G13.Outputs[Salida de origen de ADO NET].ExternalColumns[nombre_completo]"
                           dataType="wstr"
                           length="255"
@@ -1087,6 +1140,11 @@
                       isErrorOut="true"
                       name="Salida de error de origen de ADO NET">
                       <outputColumns>
+                        <outputColumn
+                          refId="Package\datawarehouse\dim_empleado\int_empleados_G13.Outputs[Salida de error de origen de ADO NET].Columns[empleado_id]"
+                          dataType="i4"
+                          lineageId="Package\datawarehouse\dim_empleado\int_empleados_G13.Outputs[Salida de error de origen de ADO NET].Columns[empleado_id]"
+                          name="empleado_id" />
                         <outputColumn
                           refId="Package\datawarehouse\dim_empleado\int_empleados_G13.Outputs[Salida de error de origen de ADO NET].Columns[nombre_completo]"
                           dataType="wstr"
@@ -1240,6 +1298,12 @@
                           cachedPrecision="28"
                           externalMetadataColumnId="Package\datawarehouse\dim_productos\dim_productos_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[cantidad]"
                           lineageId="Package\datawarehouse\dim_productos\int_products_G13.Outputs[Salida de origen de ADO NET].Columns[cantidad]" />
+                        <inputColumn
+                          refId="Package\datawarehouse\dim_productos\dim_productos_G13.Inputs[Entrada de destino de ADO NET].Columns[id]"
+                          cachedDataType="i4"
+                          cachedName="id"
+                          externalMetadataColumnId="Package\datawarehouse\dim_productos\dim_productos_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[product_id]"
+                          lineageId="Package\datawarehouse\dim_productos\int_products_G13.Outputs[Salida de origen de ADO NET].Columns[id]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -1247,6 +1311,10 @@
                           refId="Package\datawarehouse\dim_productos\dim_productos_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[producto_key]"
                           dataType="i4"
                           name="producto_key" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\dim_productos\dim_productos_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[product_id]"
+                          dataType="i4"
+                          name="product_id" />
                         <externalMetadataColumn
                           refId="Package\datawarehouse\dim_productos\dim_productos_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[descripcion]"
                           dataType="wstr"
@@ -1327,12 +1395,12 @@
                       description="Nombre de la tabla de la base de datos de origen."
                       expressionType="Notify"
                       name="TableOrViewName"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."int_product_G13"</property>
                     <property
                       dataType="System.Int32"
                       description="Especificar el modo de recuperar información de columnas externas"
                       name="AccessMode"
-                      typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                      typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
                     <property
                       dataType="System.String"
                       name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
@@ -1350,6 +1418,15 @@
                       refId="Package\datawarehouse\dim_productos\int_products_G13.Outputs[Salida de origen de ADO NET]"
                       name="Salida de origen de ADO NET">
                       <outputColumns>
+                        <outputColumn
+                          refId="Package\datawarehouse\dim_productos\int_products_G13.Outputs[Salida de origen de ADO NET].Columns[id]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\datawarehouse\dim_productos\int_products_G13.Outputs[Salida de origen de ADO NET].ExternalColumns[id]"
+                          lineageId="Package\datawarehouse\dim_productos\int_products_G13.Outputs[Salida de origen de ADO NET].Columns[id]"
+                          name="id"
+                          truncationRowDisposition="FailComponent" />
                         <outputColumn
                           refId="Package\datawarehouse\dim_productos\int_products_G13.Outputs[Salida de origen de ADO NET].Columns[descripcion]"
                           dataType="wstr"
@@ -1394,6 +1471,10 @@
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
+                          refId="Package\datawarehouse\dim_productos\int_products_G13.Outputs[Salida de origen de ADO NET].ExternalColumns[id]"
+                          dataType="i4"
+                          name="id" />
+                        <externalMetadataColumn
                           refId="Package\datawarehouse\dim_productos\int_products_G13.Outputs[Salida de origen de ADO NET].ExternalColumns[descripcion]"
                           dataType="wstr"
                           length="50"
@@ -1420,6 +1501,11 @@
                       isErrorOut="true"
                       name="Salida de error de origen de ADO NET">
                       <outputColumns>
+                        <outputColumn
+                          refId="Package\datawarehouse\dim_productos\int_products_G13.Outputs[Salida de error de origen de ADO NET].Columns[id]"
+                          dataType="i4"
+                          lineageId="Package\datawarehouse\dim_productos\int_products_G13.Outputs[Salida de error de origen de ADO NET].Columns[id]"
+                          name="id" />
                         <outputColumn
                           refId="Package\datawarehouse\dim_productos\int_products_G13.Outputs[Salida de error de origen de ADO NET].Columns[descripcion]"
                           dataType="wstr"
@@ -1835,7 +1921,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{FB461C84-0DCE-4CAE-B4D9-F7DB193DE86B}"
-              SQLTask:SqlStatementSource="USE datawarehouse_2024_G13;&#xA;GO&#xA;&#xA;IF OBJECT_ID('[dbo].[dim_clientes_G13]', 'U') IS NOT NULL&#xA;BEGIN&#xA;    DROP TABLE [dbo].[dim_clientes_G13];&#xA;END&#xA;GO&#xA;&#xA;IF OBJECT_ID('[dbo].[dim_productos_G13]', 'U') IS NOT NULL&#xA;BEGIN&#xA;    DROP TABLE [dbo].[dim_productos_G13];&#xA;END&#xA;GO&#xA;&#xA;IF OBJECT_ID('[dbo].[dim_region_G13]', 'U') IS NOT NULL&#xA;BEGIN&#xA;    DROP TABLE [dbo].[dim_region_G13];&#xA;END&#xA;GO&#xA;&#xA;IF OBJECT_ID('[dbo].[dim_tiempo_G13]', 'U') IS NOT NULL&#xA;BEGIN&#xA;    DROP TABLE [dbo].[dim_tiempo_G13];&#xA;END&#xA;GO&#xA;&#xA;CREATE TABLE [dbo].[dim_productos_G13] (&#xA;    producto_key INT IDENTITY(1,1) PRIMARY KEY,&#xA;    descripcion NVARCHAR(50),&#xA;    medida NVARCHAR(50),&#xA;    envase NVARCHAR(50),&#xA;    cantidad NUMERIC(28,0)&#xA;);&#xA;GO&#xA;&#xA;&#xA;USE datawarehouse_2024_G13;&#xA;GO&#xA;&#xA;IF OBJECT_ID('[dbo].[dim_clientes_G13]', 'U') IS NOT NULL&#xA;BEGIN&#xA;    DROP TABLE [dbo].[dim_clientes_G13];&#xA;END&#xA;GO&#xA;&#xA;IF OBJECT_ID('[dbo].[dim_productos_G13]', 'U') IS NOT NULL&#xA;BEGIN&#xA;    DROP TABLE [dbo].[dim_productos_G13];&#xA;END&#xA;GO&#xA;&#xA;IF OBJECT_ID('[dbo].[dim_region_G13]', 'U') IS NOT NULL&#xA;BEGIN&#xA;    DROP TABLE [dbo].[dim_region_G13];&#xA;END&#xA;GO&#xA;&#xA;IF OBJECT_ID('[dbo].[dim_tiempo_G13]', 'U') IS NOT NULL&#xA;BEGIN&#xA;    DROP TABLE [dbo].[dim_tiempo_G13];&#xA;END&#xA;GO&#xA;&#xA;&#xA;IF OBJECT_ID('[dbo].[dim_empleados_G13]', 'U') IS NOT NULL&#xA;BEGIN&#xA;    DROP TABLE [dbo].[dim_empleados_G13];&#xA;END&#xA;GO&#xA;&#xA;CREATE TABLE [dbo].[dim_productos_G13] (&#xA;    producto_key INT IDENTITY(1,1) PRIMARY KEY,&#xA;    descripcion NVARCHAR(50),&#xA;    medida NVARCHAR(50),&#xA;    envase NVARCHAR(50),&#xA;    cantidad NUMERIC(28,0)&#xA;);&#xA;GO&#xA;&#xA;&#xA;CREATE TABLE [dbo].[dim_region_G13] (&#xA;    region_key INT PRIMARY KEY,&#xA;    region NVARCHAR(50),&#xA;    state NVARCHAR(50),&#xA;    neighborhood NVARCHAR(50),&#xA;    zipcode NVARCHAR(50)&#xA;);&#xA;GO&#xA;&#xA;CREATE TABLE [dbo].[dim_clientes_G13] (&#xA;    cliente_key INT IDENTITY(1,1) PRIMARY KEY,&#xA;    full_name NVARCHAR(255),&#xA;    category NVARCHAR(9),&#xA;    region_key INT,&#xA;    birth_date DATETIME,&#xA;    FOREIGN KEY (region_key) REFERENCES dim_region_G13(region_key)&#xA;);&#xA;GO&#xA;&#xA;CREATE TABLE &quot;dim_tiempo_G13&quot; (&#xA;    &quot;fecha_key&quot; nvarchar(20) PRIMARY KEY,&#xA;    &quot;Fecha&quot; date,&#xA;    &quot;Dia&quot; int,&#xA;    &quot;Mes&quot; int,&#xA;    &quot;NombreMes&quot; nvarchar(20),&#xA;    &quot;Año&quot; int,&#xA;    &quot;Trimestre&quot; int,&#xA;    &quot;Semestre&quot; int,&#xA;    &quot;DiaSemana&quot; int,&#xA;    &quot;NombreDiaSemana&quot; nvarchar(20),&#xA;    &quot;Semana&quot; int,&#xA;    &quot;es_feriado&quot; nvarchar(2)&#xA;)&#xA;GO&#xA;&#xA;CREATE TABLE &quot;dim_empleados_G13&quot; (&#xA;    &quot;empleado_key&quot; int identity(1,1) primary key,&#xA;    &quot;nombre_completo&quot; nvarchar(255),&#xA;    &quot;categoria&quot; nvarchar(255),&#xA;    &quot;educacion&quot; nvarchar(255),&#xA;    &quot;genero&quot; nvarchar(255),&#xA;    &quot;fecha_empleo&quot; datetime,&#xA;    &quot;fecha_nacimiento&quot; datetime&#xA;)&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="USE datawarehouse_2024_G13;&#xA;GO&#xA;&#xA;IF OBJECT_ID('[dbo].[fact_facturas_G13]', 'U') IS NOT NULL&#xA;BEGIN&#xA;    DROP TABLE [dbo].[fact_facturas_G13];&#xA;END&#xA;GO&#xA;&#xA;IF OBJECT_ID('[dbo].[dim_clientes_G13]', 'U') IS NOT NULL&#xA;BEGIN&#xA;    DROP TABLE [dbo].[dim_clientes_G13];&#xA;END&#xA;GO&#xA;&#xA;IF OBJECT_ID('[dbo].[dim_productos_G13]', 'U') IS NOT NULL&#xA;BEGIN&#xA;    DROP TABLE [dbo].[dim_productos_G13];&#xA;END&#xA;GO&#xA;&#xA;IF OBJECT_ID('[dbo].[dim_region_G13]', 'U') IS NOT NULL&#xA;BEGIN&#xA;    DROP TABLE [dbo].[dim_region_G13];&#xA;END&#xA;GO&#xA;&#xA;IF OBJECT_ID('[dbo].[dim_tiempo_G13]', 'U') IS NOT NULL&#xA;BEGIN&#xA;    DROP TABLE [dbo].[dim_tiempo_G13];&#xA;END&#xA;GO&#xA;&#xA;&#xA;IF OBJECT_ID('[dbo].[dim_empleados_G13]', 'U') IS NOT NULL&#xA;BEGIN&#xA;    DROP TABLE [dbo].[dim_empleados_G13];&#xA;END&#xA;GO&#xA;&#xA;CREATE TABLE [dbo].[dim_productos_G13] (&#xA;    producto_key INT IDENTITY(1,1) PRIMARY KEY,&#xA;&#x9;product_id int,&#xA;    descripcion NVARCHAR(50),&#xA;    medida NVARCHAR(50),&#xA;    envase NVARCHAR(50),&#xA;    cantidad NUMERIC(28,0)&#xA;);&#xA;GO&#xA;&#xA;&#xA;CREATE TABLE [dbo].[dim_region_G13] (&#xA;    region_key INT PRIMARY KEY,&#xA;    region NVARCHAR(50),&#xA;    state NVARCHAR(50),&#xA;    neighborhood NVARCHAR(50),&#xA;    zipcode NVARCHAR(50)&#xA;);&#xA;GO&#xA;&#xA;CREATE TABLE [dbo].[dim_clientes_G13] (&#xA;    cliente_key INT IDENTITY(1,1) PRIMARY KEY,&#xA;&#x9;cliente_id int,&#xA;    full_name NVARCHAR(255),&#xA;    category NVARCHAR(9),&#xA;    region_key INT,&#xA;    birth_date DATETIME,&#xA;    FOREIGN KEY (region_key) REFERENCES dim_region_G13(region_key)&#xA;);&#xA;GO&#xA;&#xA;CREATE TABLE &quot;dim_tiempo_G13&quot; (&#xA;    &quot;fecha_key&quot; nvarchar(20) PRIMARY KEY,&#xA;    &quot;Fecha&quot; date,&#xA;    &quot;Dia&quot; int,&#xA;    &quot;Mes&quot; int,&#xA;    &quot;NombreMes&quot; nvarchar(20),&#xA;    &quot;Año&quot; int,&#xA;    &quot;Trimestre&quot; int,&#xA;    &quot;Semestre&quot; int,&#xA;    &quot;DiaSemana&quot; int,&#xA;    &quot;NombreDiaSemana&quot; nvarchar(20),&#xA;    &quot;Semana&quot; int,&#xA;    &quot;es_feriado&quot; nvarchar(2)&#xA;)&#xA;GO&#xA;&#xA;CREATE TABLE &quot;dim_empleados_G13&quot; (&#xA;    &quot;empleado_key&quot; int identity(1,1) primary key,&#xA;&#x9;&quot;empleado_id&quot; int,&#xA;    &quot;nombre_completo&quot; nvarchar(255),&#xA;    &quot;categoria&quot; nvarchar(255),&#xA;    &quot;educacion&quot; nvarchar(255),&#xA;    &quot;genero&quot; nvarchar(255),&#xA;    &quot;fecha_empleo&quot; datetime,&#xA;    &quot;fecha_nacimiento&quot; datetime&#xA;)&#xA;GO&#xA;&#xA;CREATE TABLE &quot;fact_facturas_G13&quot; (&#xA;    &quot;factura_key&quot; int identity(1,1) primary key,&#xA;    &quot;fecha_key&quot; nvarchar(20),&#xA;    &quot;cliente_key&quot; int,&#xA;    &quot;empleado_key&quot; int,&#xA;    &quot;producto_key&quot; int,&#xA;    &quot;cantidad&quot; int,&#xA;    &quot;region&quot; nvarchar(45),&#xA;    &quot;total_factura&quot; float,&#xA;    &quot;porcentaje_descuento&quot; numeric(18,6),&#xA;    &quot;total_descuento&quot; float,&#xA;    &quot;cantidad_latas&quot; int,&#xA;    &quot;litros_vendidos&quot; numeric(28,6),&#xA;    &quot;edad_comprador&quot; int,&#xA;&#x9;FOREIGN KEY (fecha_key) REFERENCES dim_tiempo_G13(fecha_key),&#xA;&#x9;FOREIGN KEY (cliente_key) REFERENCES dim_clientes_G13(cliente_key),&#xA;&#x9;FOREIGN KEY (empleado_key) REFERENCES dim_empleados_G13(empleado_key),&#xA;&#x9;FOREIGN KEY (producto_key) REFERENCES dim_productos_G13(producto_key)&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -2399,6 +2485,576 @@ ON
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\datawarehouse\fact_facturas"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarea Flujo de datos"
+          DTS:DTSID="{F715A570-9BB9-4A51-AC3C-4C6169BAF7BC}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="fact_facturas"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\datawarehouse\fact_facturas\fact_facturas_G13"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+                  description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+                  name="fact_facturas_G13"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Nombre de la tabla de la base de datos de destino."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."fact_facturas_G13"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                      expressionType="Notify"
+                      name="BatchSize">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                      expressionType="Notify"
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                      expressionType="Notify"
+                      name="UseBulkInsertWhenPossible">true</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-SD7BGTJ\SQLEXPRESS.datawarehouse_2024_G131]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-SD7BGTJ\SQLEXPRESS.datawarehouse_2024_G131]"
+                      description="Administrador de conexiones administrado"
+                      name="IDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET]"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de destino de ADO NET">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].Columns[fecha_key]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="fecha_key"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[fecha_key]"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[fecha_key]" />
+                        <inputColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].Columns[cliente_key]"
+                          cachedDataType="i4"
+                          cachedName="cliente_key"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[cliente_key]"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[cliente_key]" />
+                        <inputColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].Columns[empleado_key]"
+                          cachedDataType="i4"
+                          cachedName="empleado_key"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[empleado_key]"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[empleado_key]" />
+                        <inputColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].Columns[producto_key]"
+                          cachedDataType="i4"
+                          cachedName="producto_key"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[producto_key]"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[producto_key]" />
+                        <inputColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].Columns[cantidad]"
+                          cachedDataType="i4"
+                          cachedName="cantidad"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[cantidad]"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[cantidad]" />
+                        <inputColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].Columns[region]"
+                          cachedDataType="wstr"
+                          cachedLength="45"
+                          cachedName="region"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[region]"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[region]" />
+                        <inputColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].Columns[total_factura]"
+                          cachedDataType="r8"
+                          cachedName="total_factura"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[total_factura]"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[total_factura]" />
+                        <inputColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].Columns[porcentaje_descuento]"
+                          cachedDataType="numeric"
+                          cachedName="porcentaje_descuento"
+                          cachedPrecision="18"
+                          cachedScale="6"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[porcentaje_descuento]"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[porcentaje_descuento]" />
+                        <inputColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].Columns[total_descuento]"
+                          cachedDataType="r8"
+                          cachedName="total_descuento"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[total_descuento]"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[total_descuento]" />
+                        <inputColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].Columns[cantidad_latas]"
+                          cachedDataType="i4"
+                          cachedName="cantidad_latas"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[cantidad_latas]"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[cantidad_latas]" />
+                        <inputColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].Columns[litros_vendidos]"
+                          cachedDataType="numeric"
+                          cachedName="litros_vendidos"
+                          cachedPrecision="28"
+                          cachedScale="6"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[litros_vendidos]"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[litros_vendidos]" />
+                        <inputColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].Columns[edad_comprador]"
+                          cachedDataType="i4"
+                          cachedName="edad_comprador"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[edad_comprador]"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[edad_comprador]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[factura_key]"
+                          dataType="i4"
+                          name="factura_key" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[fecha_key]"
+                          dataType="wstr"
+                          length="20"
+                          name="fecha_key" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[cliente_key]"
+                          dataType="i4"
+                          name="cliente_key" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[empleado_key]"
+                          dataType="i4"
+                          name="empleado_key" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[producto_key]"
+                          dataType="i4"
+                          name="producto_key" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[cantidad]"
+                          dataType="i4"
+                          name="cantidad" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[region]"
+                          dataType="wstr"
+                          length="45"
+                          name="region" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[total_factura]"
+                          dataType="r8"
+                          name="total_factura" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[porcentaje_descuento]"
+                          dataType="numeric"
+                          name="porcentaje_descuento"
+                          precision="18"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[total_descuento]"
+                          dataType="r8"
+                          name="total_descuento" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[cantidad_latas]"
+                          dataType="i4"
+                          name="cantidad_latas" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[litros_vendidos]"
+                          dataType="numeric"
+                          name="litros_vendidos"
+                          precision="28"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[edad_comprador]"
+                          dataType="i4"
+                          name="edad_comprador" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Outputs[Salida de error de destino de ADO NET]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de destino de ADO NET"
+                      synchronousInputId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\datawarehouse\fact_facturas\int_fact"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+                  description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+                  name="int_fact"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT  
+       tm.fecha_key
+      ,cl.cliente_key
+      ,em.empleado_key
+      ,pr.producto_key
+      ,fact.[QUANTITY] as cantidad
+      ,fact.[REGION] as region
+	  ,fact.QUANTITY * fact.PRICE_Apply as total_factura
+      ,1 - fact.[PERCENTAGE_Apply] as porcentaje_descuento
+      ,fact.QUANTITY * fact.PRICE * (1 - fact.[PERCENTAGE_Apply]) as total_descuento
+      ,fact.[CantLatas] as cantidad_latas
+      ,fact.[LitrosVendidos] as litros_vendidos
+      ,fact.[EdadAlMomentoDeLaCompra] as edad_comprador
+  FROM [int_2024_G13].[dbo].[int_fact_G13] as fact
+  inner join [datawarehouse_2024_G13].[dbo].[dim_clientes_G13]  cl on fact.[CUSTOMER_ID] = cl.cliente_id
+  inner join [datawarehouse_2024_G13].[dbo].[dim_empleados_G13]  em on fact.[EMPLOYEE_ID] = em.empleado_id
+  inner join [datawarehouse_2024_G13].[dbo].[dim_productos_G13]  pr on fact.[PRODUCT_ID] = pr.product_id
+  inner join [datawarehouse_2024_G13].[dbo].[dim_tiempo_G13]  tm on FORMAT( fact.[DATE], 'yyyyMMdd') = tm.fecha_key</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                      name="AllowImplicitStringConversion">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Nombre de la tabla de la base de datos de origen."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especificar el modo de recuperar información de columnas externas"
+                      name="AccessMode"
+                      typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\datawarehouse\fact_facturas\int_fact.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-SD7BGTJ\SQLEXPRESS.int_2024_G13]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-SD7BGTJ\SQLEXPRESS.int_2024_G13]"
+                      description="Administrador de conexiones administrado"
+                      name="IDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET]"
+                      name="Salida de origen de ADO NET">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[fecha_key]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[fecha_key]"
+                          length="20"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[fecha_key]"
+                          name="fecha_key"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[cliente_key]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[cliente_key]"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[cliente_key]"
+                          name="cliente_key"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[empleado_key]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[empleado_key]"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[empleado_key]"
+                          name="empleado_key"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[producto_key]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[producto_key]"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[producto_key]"
+                          name="producto_key"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[cantidad]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[cantidad]"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[cantidad]"
+                          name="cantidad"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[region]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[region]"
+                          length="45"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[region]"
+                          name="region"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[total_factura]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[total_factura]"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[total_factura]"
+                          name="total_factura"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[porcentaje_descuento]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[porcentaje_descuento]"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[porcentaje_descuento]"
+                          name="porcentaje_descuento"
+                          precision="18"
+                          scale="6"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[total_descuento]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[total_descuento]"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[total_descuento]"
+                          name="total_descuento"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[cantidad_latas]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[cantidad_latas]"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[cantidad_latas]"
+                          name="cantidad_latas"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[litros_vendidos]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[litros_vendidos]"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[litros_vendidos]"
+                          name="litros_vendidos"
+                          precision="28"
+                          scale="6"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[edad_comprador]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[edad_comprador]"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].Columns[edad_comprador]"
+                          name="edad_comprador"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[fecha_key]"
+                          dataType="wstr"
+                          length="20"
+                          name="fecha_key" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[cliente_key]"
+                          dataType="i4"
+                          name="cliente_key" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[empleado_key]"
+                          dataType="i4"
+                          name="empleado_key" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[producto_key]"
+                          dataType="i4"
+                          name="producto_key" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[cantidad]"
+                          dataType="i4"
+                          name="cantidad" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[region]"
+                          dataType="wstr"
+                          length="45"
+                          name="region" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[total_factura]"
+                          dataType="r8"
+                          name="total_factura" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[porcentaje_descuento]"
+                          dataType="numeric"
+                          name="porcentaje_descuento"
+                          precision="18"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[total_descuento]"
+                          dataType="r8"
+                          name="total_descuento" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[cantidad_latas]"
+                          dataType="i4"
+                          name="cantidad_latas" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[litros_vendidos]"
+                          dataType="numeric"
+                          name="litros_vendidos"
+                          precision="28"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET].ExternalColumns[edad_comprador]"
+                          dataType="i4"
+                          name="edad_comprador" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET]"
+                      isErrorOut="true"
+                      name="Salida de error de origen de ADO NET">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[fecha_key]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[fecha_key]"
+                          name="fecha_key" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[cliente_key]"
+                          dataType="i4"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[cliente_key]"
+                          name="cliente_key" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[empleado_key]"
+                          dataType="i4"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[empleado_key]"
+                          name="empleado_key" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[producto_key]"
+                          dataType="i4"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[producto_key]"
+                          name="producto_key" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[cantidad]"
+                          dataType="i4"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[cantidad]"
+                          name="cantidad" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[region]"
+                          dataType="wstr"
+                          length="45"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[region]"
+                          name="region" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[total_factura]"
+                          dataType="r8"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[total_factura]"
+                          name="total_factura" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[porcentaje_descuento]"
+                          dataType="numeric"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[porcentaje_descuento]"
+                          name="porcentaje_descuento"
+                          precision="18"
+                          scale="6" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[total_descuento]"
+                          dataType="r8"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[total_descuento]"
+                          name="total_descuento" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[cantidad_latas]"
+                          dataType="i4"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[cantidad_latas]"
+                          name="cantidad_latas" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[litros_vendidos]"
+                          dataType="numeric"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[litros_vendidos]"
+                          name="litros_vendidos"
+                          precision="28"
+                          scale="6" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[edad_comprador]"
+                          dataType="i4"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[edad_comprador]"
+                          name="edad_comprador" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\datawarehouse\fact_facturas.Paths[Salida de origen de ADO NET]"
+                  endId="Package\datawarehouse\fact_facturas\fact_facturas_G13.Inputs[Entrada de destino de ADO NET]"
+                  name="Salida de origen de ADO NET"
+                  startId="Package\datawarehouse\fact_facturas\int_fact.Outputs[Salida de origen de ADO NET]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
@@ -2441,6 +3097,46 @@ ON
           DTS:LogicalAnd="True"
           DTS:ObjectName="Restricción 4"
           DTS:To="Package\datawarehouse\dim_empleado" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\datawarehouse.PrecedenceConstraints[Restricción 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{DB2369D2-9B4A-426A-AF51-96E3EC73D2FF}"
+          DTS:From="Package\datawarehouse\dim_clientes"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 5"
+          DTS:To="Package\datawarehouse\fact_facturas" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\datawarehouse.PrecedenceConstraints[Restricción 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{4243DD8D-E5C2-45A4-A38C-A032A813A74C}"
+          DTS:From="Package\datawarehouse\dim_productos"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 6"
+          DTS:To="Package\datawarehouse\fact_facturas" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\datawarehouse.PrecedenceConstraints[Restricción 7]"
+          DTS:CreationName=""
+          DTS:DTSID="{B35C069C-D991-43EE-95F9-F4FDB34AF56A}"
+          DTS:From="Package\datawarehouse\dim_region"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 7"
+          DTS:To="Package\datawarehouse\fact_facturas" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\datawarehouse.PrecedenceConstraints[Restricción 8]"
+          DTS:CreationName=""
+          DTS:DTSID="{D17350A9-4A8D-46CE-9DB3-E015BEEB7CA8}"
+          DTS:From="Package\datawarehouse\dim_tiempo"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 8"
+          DTS:To="Package\datawarehouse\fact_facturas" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\datawarehouse.PrecedenceConstraints[Restricción 9]"
+          DTS:CreationName=""
+          DTS:DTSID="{63932014-892C-4006-AB53-5345B4FF0384}"
+          DTS:From="Package\datawarehouse\dim_empleado"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 9"
+          DTS:To="Package\datawarehouse\fact_facturas" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
     <DTS:Executable
@@ -4180,6 +4876,725 @@ FROM [stg_2024_G13].[dbo].[stg_employees_G13];</property>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
+          DTS:refId="Package\intermedia\int_fact"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Tarea Flujo de datos"
+          DTS:DTSID="{AFF1AE0B-16A9-42DA-8166-9B097B0E0E5B}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="int_fact"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\intermedia\int_fact\int_fact_G13"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+                  description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+                  name="int_fact_G13"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Nombre de la tabla de la base de datos de destino."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"int_fact_G13"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                      expressionType="Notify"
+                      name="BatchSize">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                      expressionType="Notify"
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                      expressionType="Notify"
+                      name="UseBulkInsertWhenPossible">true</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\intermedia\int_fact\int_fact_G13.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-SD7BGTJ\SQLEXPRESS.int_2024_G13]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-SD7BGTJ\SQLEXPRESS.int_2024_G13]"
+                      description="Administrador de conexiones administrado"
+                      name="IDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET]"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de destino de ADO NET">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].Columns[BILLING_ID]"
+                          cachedDataType="i4"
+                          cachedName="BILLING_ID"
+                          externalMetadataColumnId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[BILLING_ID]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[BILLING_ID]" />
+                        <inputColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].Columns[DATE]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DATE"
+                          externalMetadataColumnId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[DATE]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[DATE]" />
+                        <inputColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].Columns[CUSTOMER_ID]"
+                          cachedDataType="i4"
+                          cachedName="CUSTOMER_ID"
+                          externalMetadataColumnId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[CUSTOMER_ID]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[CUSTOMER_ID]" />
+                        <inputColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].Columns[EMPLOYEE_ID]"
+                          cachedDataType="i4"
+                          cachedName="EMPLOYEE_ID"
+                          externalMetadataColumnId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[EMPLOYEE_ID]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[EMPLOYEE_ID]" />
+                        <inputColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].Columns[PRODUCT_ID]"
+                          cachedDataType="i4"
+                          cachedName="PRODUCT_ID"
+                          externalMetadataColumnId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[PRODUCT_ID]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[PRODUCT_ID]" />
+                        <inputColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].Columns[QUANTITY]"
+                          cachedDataType="i4"
+                          cachedName="QUANTITY"
+                          externalMetadataColumnId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[QUANTITY]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[QUANTITY]" />
+                        <inputColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].Columns[REGION]"
+                          cachedDataType="wstr"
+                          cachedLength="45"
+                          cachedName="REGION"
+                          externalMetadataColumnId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[REGION]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[REGION]" />
+                        <inputColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].Columns[PRICE]"
+                          cachedDataType="r8"
+                          cachedName="PRICE"
+                          externalMetadataColumnId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[PRICE]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[PRICE]" />
+                        <inputColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].Columns[PERCENTAGE_Apply]"
+                          cachedDataType="numeric"
+                          cachedName="PERCENTAGE_Apply"
+                          cachedPrecision="17"
+                          cachedScale="6"
+                          externalMetadataColumnId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[PERCENTAGE_Apply]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[PERCENTAGE_Apply]" />
+                        <inputColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].Columns[TOTAL_BILLING_Apply]"
+                          cachedDataType="r8"
+                          cachedName="TOTAL_BILLING_Apply"
+                          externalMetadataColumnId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[TOTAL_BILLING_Apply]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[TOTAL_BILLING_Apply]" />
+                        <inputColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].Columns[PRICE_Apply]"
+                          cachedDataType="r8"
+                          cachedName="PRICE_Apply"
+                          externalMetadataColumnId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[PRICE_Apply]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[PRICE_Apply]" />
+                        <inputColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].Columns[CantLatas]"
+                          cachedDataType="i4"
+                          cachedName="CantLatas"
+                          externalMetadataColumnId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[CantLatas]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[CantLatas]" />
+                        <inputColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].Columns[LitrosVendidos]"
+                          cachedDataType="numeric"
+                          cachedName="LitrosVendidos"
+                          cachedPrecision="28"
+                          cachedScale="6"
+                          externalMetadataColumnId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[LitrosVendidos]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[LitrosVendidos]" />
+                        <inputColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].Columns[MontoDescuento]"
+                          cachedDataType="r8"
+                          cachedName="MontoDescuento"
+                          externalMetadataColumnId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[MontoDescuento]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[MontoDescuento]" />
+                        <inputColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].Columns[EdadAlMomentoDeLaCompra]"
+                          cachedDataType="i4"
+                          cachedName="EdadAlMomentoDeLaCompra"
+                          externalMetadataColumnId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[EdadAlMomentoDeLaCompra]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[EdadAlMomentoDeLaCompra]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[BILLING_ID]"
+                          dataType="i4"
+                          name="BILLING_ID" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[DATE]"
+                          dataType="dbTimeStamp"
+                          name="DATE" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[CUSTOMER_ID]"
+                          dataType="i4"
+                          name="CUSTOMER_ID" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[EMPLOYEE_ID]"
+                          dataType="i4"
+                          name="EMPLOYEE_ID" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[PRODUCT_ID]"
+                          dataType="i4"
+                          name="PRODUCT_ID" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[QUANTITY]"
+                          dataType="i4"
+                          name="QUANTITY" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[REGION]"
+                          dataType="wstr"
+                          length="45"
+                          name="REGION" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[PRICE]"
+                          dataType="r8"
+                          name="PRICE" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[PERCENTAGE_Apply]"
+                          dataType="numeric"
+                          name="PERCENTAGE_Apply"
+                          precision="17"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[TOTAL_BILLING_Apply]"
+                          dataType="r8"
+                          name="TOTAL_BILLING_Apply" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[PRICE_Apply]"
+                          dataType="r8"
+                          name="PRICE_Apply" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[CantLatas]"
+                          dataType="i4"
+                          name="CantLatas" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[LitrosVendidos]"
+                          dataType="numeric"
+                          name="LitrosVendidos"
+                          precision="28"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[MontoDescuento]"
+                          dataType="r8"
+                          name="MontoDescuento" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET].ExternalColumns[EdadAlMomentoDeLaCompra]"
+                          dataType="i4"
+                          name="EdadAlMomentoDeLaCompra" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\intermedia\int_fact\int_fact_G13.Outputs[Salida de error de destino de ADO NET]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Salida de error de destino de ADO NET"
+                      synchronousInputId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\intermedia\int_fact\int_fact_G13.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\int_fact_G13.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\intermedia\int_fact\int_fact_G13.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\intermedia\int_fact\stg_billing"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+                  description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+                  name="stg_billing"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">with cte_price as 
+(
+	SELECT
+	    PRODUCT_ID,
+	    DATE AS FechaDesde,
+	    LEAD(DATE) OVER (PARTITION BY PRODUCT_ID ORDER BY DATE) AS FechaHasta,
+	    PRICE
+	FROM stg_2024_G13.dbo.stg_prices_G13
+),
+cte_billing_union as
+(
+	SELECT BillingSql.BILLING_ID
+			, BillingSql.DATE
+			, BillingSql.CUSTOMER_ID
+			, BillingSql.EMPLOYEE_ID
+			, BillingSql.PRODUCT_ID
+			, BillingSql.QUANTITY
+			, BillingSql.REGION
+	FROM stg_2024_G13.dbo.stg_billing_old_G13 AS BillingSql 
+	
+	
+	UNION ALL
+	
+	SELECT MySql.BILLING_ID
+			, MySql.DATE
+			, MySql.CUSTOMER_ID
+			, MySql.EMPLOYEE_ID
+			, MySqlDetail.PRODUCT_ID
+			, MySqlDetail.QUANTITY
+			, MySql.REGION
+	
+	FROM stg_2024_G13.dbo.stg_billing_G13 AS MySql --93.392
+		INNER JOIN stg_2024_G13.dbo.stg_billing_detail_G13 AS MySqlDetail --317.868
+			ON MySql.BILLING_ID = MySqlDetail.BILLING_ID
+	
+),
+cte_billing_total AS 
+(
+	select bu.BILLING_ID
+			, bu.DATE
+			, SUM(bu.QUANTITY * Prices.PRICE) AS TOTAL_BILLING
+	from cte_billing_union AS bu
+		LEFT JOIN cte_price AS Prices --317.868
+			ON bu.PRODUCT_ID = Prices.PRODUCT_ID
+			AND bu.DATE &gt;= Prices.FechaDesde
+			AND (bu.DATE &lt; Prices.FechaHasta OR Prices.FechaHasta IS NULL)
+	group by bu.BILLING_ID
+			, bu.DATE
+),
+cte_discounts AS
+(
+	select bt.BILLING_ID, (100-MAX(sd.PERCENTAGE))/100.0 AS PERCENTAGE_Apply, MAX(sd.TOTAL_BILLING) AS TOTAL_BILLING_Apply
+	from cte_billing_total as bt
+		inner join stg_2024_G13.dbo.stg_discount_G13 sd 
+			on bt.TOTAL_BILLING &gt;= sd.TOTAL_BILLING
+			AND bt.DATE &gt;= sd.[FROM]
+			AND (bt.DATE &lt; sd.UNTIL OR sd.UNTIL IS NULL)
+	group by bt.BILLING_ID
+),
+cte_dim_producto AS
+(
+	select *
+		,case when presentacion like '%can' then 1 else 0 end AS EsLata
+		, CAST(SUBSTRING(presentacion, 1, PATINDEX('%[^0-9]%', presentacion + 't') - 1) AS INT) AS Capacidad
+		, CASE WHEN presentacion LIKE '%cm3%' 
+			THEN CAST(SUBSTRING(presentacion, 1, PATINDEX('%[^0-9]%', presentacion + 't') - 1) AS INT)/1000.0
+			ELSE  CAST(SUBSTRING(presentacion, 1, PATINDEX('%[^0-9]%', presentacion + 't') - 1) AS INT)
+			END AS Litros
+	from stg_2024_G13.dbo.stg_products_G13 sp 
+)
+select bu.*
+    , Prices.PRICE
+	, case when d.PERCENTAGE_Apply is null then 1 else d.PERCENTAGE_Apply end AS PERCENTAGE_Apply
+	, case when d.TOTAL_BILLING_Apply is null then 0 else d.TOTAL_BILLING_Apply end AS TOTAL_BILLING_Apply
+	, (case when d.PERCENTAGE_Apply is null then 1 else d.PERCENTAGE_Apply end) * Prices.PRICE AS PRICE_Apply
+	--litros vendidos =&gt; Busco los litros de cada producto en la dim_product y lo multiplico por la cantidad de productos
+	, bu.QUANTITY * dp.EsLata AS CantLatas
+	, bu.QUANTITY * dp.Litros AS LitrosVendidos
+	, Prices.PRICE - (case when d.PERCENTAGE_Apply is null then 1 else d.PERCENTAGE_Apply end) * Prices.PRICE AS MontoDescuento
+	, DATEDIFF(YEAR, dc.[Copy of BIRTH_DATE], bu.Date) AS EdadAlMomentoDeLaCompra
+	from cte_billing_union AS bu
+	LEFT JOIN cte_price AS Prices --317.868
+			ON bu.PRODUCT_ID = Prices.PRODUCT_ID
+			AND bu.DATE &gt;= Prices.FechaDesde
+			AND (bu.DATE &lt; Prices.FechaHasta OR Prices.FechaHasta IS NULL)
+	left join cte_discounts d
+		on bu.BILLING_ID = d.BILLING_ID
+	left join cte_dim_producto AS dp
+		on bu.PRODUCT_ID = dp.ID
+	left join int_2024_G13.dbo.int_clientes_G13 dc 
+		on bu.CUSTOMER_ID = dc.CUSTOMER_ID
+	--Agregar las Key del DW</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                      name="AllowImplicitStringConversion">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Nombre de la tabla de la base de datos de origen."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especificar el modo de recuperar información de columnas externas"
+                      name="AccessMode"
+                      typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\intermedia\int_fact\stg_billing.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[DESKTOP-SD7BGTJ\SQLEXPRESS.stg_2024_G131]"
+                      connectionManagerRefId="Package.ConnectionManagers[DESKTOP-SD7BGTJ\SQLEXPRESS.stg_2024_G131]"
+                      description="Administrador de conexiones administrado"
+                      name="IDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET]"
+                      name="Salida de origen de ADO NET">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[BILLING_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[BILLING_ID]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[BILLING_ID]"
+                          name="BILLING_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[DATE]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[DATE]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[DATE]"
+                          name="DATE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[CUSTOMER_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[CUSTOMER_ID]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[CUSTOMER_ID]"
+                          name="CUSTOMER_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[EMPLOYEE_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[EMPLOYEE_ID]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[EMPLOYEE_ID]"
+                          name="EMPLOYEE_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[PRODUCT_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[PRODUCT_ID]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[PRODUCT_ID]"
+                          name="PRODUCT_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[QUANTITY]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[QUANTITY]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[QUANTITY]"
+                          name="QUANTITY"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[REGION]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[REGION]"
+                          length="45"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[REGION]"
+                          name="REGION"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[PRICE]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[PRICE]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[PRICE]"
+                          name="PRICE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[PERCENTAGE_Apply]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[PERCENTAGE_Apply]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[PERCENTAGE_Apply]"
+                          name="PERCENTAGE_Apply"
+                          precision="17"
+                          scale="6"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[TOTAL_BILLING_Apply]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[TOTAL_BILLING_Apply]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[TOTAL_BILLING_Apply]"
+                          name="TOTAL_BILLING_Apply"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[PRICE_Apply]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[PRICE_Apply]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[PRICE_Apply]"
+                          name="PRICE_Apply"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[CantLatas]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[CantLatas]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[CantLatas]"
+                          name="CantLatas"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[LitrosVendidos]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[LitrosVendidos]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[LitrosVendidos]"
+                          name="LitrosVendidos"
+                          precision="28"
+                          scale="6"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[MontoDescuento]"
+                          dataType="r8"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[MontoDescuento]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[MontoDescuento]"
+                          name="MontoDescuento"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[EdadAlMomentoDeLaCompra]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversión"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[EdadAlMomentoDeLaCompra]"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].Columns[EdadAlMomentoDeLaCompra]"
+                          name="EdadAlMomentoDeLaCompra"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[BILLING_ID]"
+                          dataType="i4"
+                          name="BILLING_ID" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[DATE]"
+                          dataType="dbTimeStamp"
+                          name="DATE" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[CUSTOMER_ID]"
+                          dataType="i4"
+                          name="CUSTOMER_ID" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[EMPLOYEE_ID]"
+                          dataType="i4"
+                          name="EMPLOYEE_ID" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[PRODUCT_ID]"
+                          dataType="i4"
+                          name="PRODUCT_ID" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[QUANTITY]"
+                          dataType="i4"
+                          name="QUANTITY" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[REGION]"
+                          dataType="wstr"
+                          length="45"
+                          name="REGION" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[PRICE]"
+                          dataType="r8"
+                          name="PRICE" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[PERCENTAGE_Apply]"
+                          dataType="numeric"
+                          name="PERCENTAGE_Apply"
+                          precision="17"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[TOTAL_BILLING_Apply]"
+                          dataType="r8"
+                          name="TOTAL_BILLING_Apply" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[PRICE_Apply]"
+                          dataType="r8"
+                          name="PRICE_Apply" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[CantLatas]"
+                          dataType="i4"
+                          name="CantLatas" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[LitrosVendidos]"
+                          dataType="numeric"
+                          name="LitrosVendidos"
+                          precision="28"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[MontoDescuento]"
+                          dataType="r8"
+                          name="MontoDescuento" />
+                        <externalMetadataColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET].ExternalColumns[EdadAlMomentoDeLaCompra]"
+                          dataType="i4"
+                          name="EdadAlMomentoDeLaCompra" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET]"
+                      isErrorOut="true"
+                      name="Salida de error de origen de ADO NET">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[BILLING_ID]"
+                          dataType="i4"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[BILLING_ID]"
+                          name="BILLING_ID" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[DATE]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[DATE]"
+                          name="DATE" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[CUSTOMER_ID]"
+                          dataType="i4"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[CUSTOMER_ID]"
+                          name="CUSTOMER_ID" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[EMPLOYEE_ID]"
+                          dataType="i4"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[EMPLOYEE_ID]"
+                          name="EMPLOYEE_ID" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[PRODUCT_ID]"
+                          dataType="i4"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[PRODUCT_ID]"
+                          name="PRODUCT_ID" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[QUANTITY]"
+                          dataType="i4"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[QUANTITY]"
+                          name="QUANTITY" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[REGION]"
+                          dataType="wstr"
+                          length="45"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[REGION]"
+                          name="REGION" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[PRICE]"
+                          dataType="r8"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[PRICE]"
+                          name="PRICE" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[PERCENTAGE_Apply]"
+                          dataType="numeric"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[PERCENTAGE_Apply]"
+                          name="PERCENTAGE_Apply"
+                          precision="17"
+                          scale="6" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[TOTAL_BILLING_Apply]"
+                          dataType="r8"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[TOTAL_BILLING_Apply]"
+                          name="TOTAL_BILLING_Apply" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[PRICE_Apply]"
+                          dataType="r8"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[PRICE_Apply]"
+                          name="PRICE_Apply" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[CantLatas]"
+                          dataType="i4"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[CantLatas]"
+                          name="CantLatas" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[LitrosVendidos]"
+                          dataType="numeric"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[LitrosVendidos]"
+                          name="LitrosVendidos"
+                          precision="28"
+                          scale="6" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[MontoDescuento]"
+                          dataType="r8"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[MontoDescuento]"
+                          name="MontoDescuento" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[EdadAlMomentoDeLaCompra]"
+                          dataType="i4"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[EdadAlMomentoDeLaCompra]"
+                          name="EdadAlMomentoDeLaCompra" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\intermedia\int_fact.Paths[Salida de origen de ADO NET]"
+                  endId="Package\intermedia\int_fact\int_fact_G13.Inputs[Entrada de destino de ADO NET]"
+                  name="Salida de origen de ADO NET"
+                  startId="Package\intermedia\int_fact\stg_billing.Outputs[Salida de origen de ADO NET]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
           DTS:refId="Package\intermedia\int_productos"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Tarea Flujo de datos"
@@ -5275,7 +6690,7 @@ FROM [stg_2024_G13].[dbo].[stg_employees_G13];</property>
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{EAFC0F97-3B78-4694-8930-60A9DE63A1C0}"
-              SQLTask:SqlStatementSource="TRUNCATE TABLE [int_2024_G13].[dbo].[int_product_G13]; &#xA;TRUNCATE TABLE [int_2024_G13].[dbo].[int_empleados_G13]; &#xA;TRUNCATE TABLE [int_2024_G13].[dbo].[int_clientes_G13]; &#xA;TRUNCATE TABLE [int_2024_G13].[dbo].[int_region_G13]; &#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="TRUNCATE TABLE [int_2024_G13].[dbo].[int_product_G13]; &#xA;TRUNCATE TABLE [int_2024_G13].[dbo].[int_empleados_G13]; &#xA;TRUNCATE TABLE [int_2024_G13].[dbo].[int_clientes_G13]; &#xA;TRUNCATE TABLE [int_2024_G13].[dbo].[int_region_G13]; &#xA;TRUNCATE TABLE [int_2024_G13].[dbo].[int_fact_G13]; " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -5305,6 +6720,14 @@ FROM [stg_2024_G13].[dbo].[stg_employees_G13];</property>
           DTS:ObjectName="Restricción 2"
           DTS:To="Package\intermedia\int_employee" />
         <DTS:PrecedenceConstraint
+          DTS:refId="Package\intermedia.PrecedenceConstraints[Restricción 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{71034BA3-3EE6-4855-A26D-1AA2014DAA01}"
+          DTS:From="Package\intermedia\Truncar_int"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Restricción 3"
+          DTS:To="Package\intermedia\int_fact" />
+        <DTS:PrecedenceConstraint
           DTS:refId="Package\intermedia.PrecedenceConstraints[Restricción 4]"
           DTS:CreationName=""
           DTS:DTSID="{86406282-18EF-4C3B-8CFD-3FD93E025C36}"
@@ -5326,7 +6749,6 @@ FROM [stg_2024_G13].[dbo].[stg_employees_G13];</property>
       DTS:refId="Package\staging"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Contenedor de secuencias"
-      DTS:Disabled="True"
       DTS:DTSID="{5789A4F7-1BE1-4C6F-906C-DF52237A0777}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
@@ -9523,30 +10945,65 @@ FROM sales.prices;</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="151,42"
-          Id="Package\datawarehouse\dim_productos"
-          TopLeft="295.5,116.5" />
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="140,42"
           Id="Package\datawarehouse\dim_clientes"
           TopLeft="95,116.5" />
         <NodeLayout
+          Size="151,42"
+          Id="Package\datawarehouse\dim_empleado"
+          TopLeft="897.5,116.5" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\datawarehouse\dim_productos"
+          TopLeft="295.5,116.5" />
+        <NodeLayout
           Size="133,42"
           Id="Package\datawarehouse\dim_region"
           TopLeft="507.5,116.5" />
-        <AnnotationLayout
-          Text=""
-          ParentId="Package\datawarehouse"
-          FontInfo="{assembly:Null}"
-          Size="29,60"
-          Id="dd84f7d1-5ad9-4558-a61f-3e51af036294"
-          TopLeft="5.5,107.5" />
         <NodeLayout
           Size="132,42"
           Id="Package\datawarehouse\dim_tables"
           TopLeft="508,5.49999999999989" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\datawarehouse\dim_tiempo"
+          TopLeft="701,116.5" />
+        <EdgeLayout
+          Id="Package\datawarehouse.PrecedenceConstraints[Restricción]"
+          TopLeft="594.666666666667,47.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="174.333333333333,69.0000000000001"
+              Start="0,0"
+              End="174.333333333333,61.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.0958083832336" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.0958083832336"
+                    Point2="0,28.0958083832336"
+                    Point3="4,28.0958083832336" />
+                  <mssgle:LineSegment
+                    End="170.333333333333,28.0958083832336" />
+                  <mssgle:CubicBezierSegment
+                    Point1="170.333333333333,28.0958083832336"
+                    Point2="174.333333333333,28.0958083832336"
+                    Point3="174.333333333333,32.0958083832336" />
+                  <mssgle:LineSegment
+                    End="174.333333333333,61.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\datawarehouse.PrecedenceConstraints[Restricción 1]"
           TopLeft="532.666666666667,47.4999999999999">
@@ -9621,14 +11078,14 @@ FROM sales.prices;</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,69"
+              EndConnector="0,69.0000000000001"
               Start="0,0"
-              End="0,61.5">
+              End="0,61.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,61.5" />
+                    End="0,61.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9637,57 +11094,15 @@ FROM sales.prices;</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="136,42"
-          Id="Package\datawarehouse\dim_tiempo"
-          TopLeft="701,116.5" />
-        <EdgeLayout
-          Id="Package\datawarehouse.PrecedenceConstraints[Restricción]"
-          TopLeft="594.666666666667,47.4999999999999">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="174.333333333333,69"
-              Start="0,0"
-              End="174.333333333333,61.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.0958083832335" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.0958083832335"
-                    Point2="0,28.0958083832335"
-                    Point3="4,28.0958083832335" />
-                  <mssgle:LineSegment
-                    End="170.333333333333,28.0958083832335" />
-                  <mssgle:CubicBezierSegment
-                    Point1="170.333333333333,28.0958083832335"
-                    Point2="174.333333333333,28.0958083832335"
-                    Point3="174.333333333333,32.0958083832335" />
-                  <mssgle:LineSegment
-                    End="174.333333333333,61.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="151,42"
-          Id="Package\datawarehouse\dim_empleado"
-          TopLeft="897.5,116.5" />
         <EdgeLayout
           Id="Package\datawarehouse.PrecedenceConstraints[Restricción 4]"
           TopLeft="615.333333333333,47.4999999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="357.666666666667,69"
+              EndConnector="357.666666666667,69.0000000000001"
               Start="0,0"
-              End="357.666666666667,61.5">
+              End="357.666666666667,61.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -9704,7 +11119,188 @@ FROM sales.prices;</property>
                     Point2="357.666666666667,18.7720588235294"
                     Point3="357.666666666667,22.7720588235294" />
                   <mssgle:LineSegment
-                    End="357.666666666667,61.5" />
+                    End="357.666666666667,61.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text=""
+          ParentId="Package\datawarehouse"
+          FontInfo="{assembly:Null}"
+          Size="29,41"
+          Id="dd84f7d1-5ad9-4558-a61f-3e51af036294"
+          TopLeft="5.5,107.5" />
+        <NodeLayout
+          Size="142,42"
+          Id="Package\datawarehouse\fact_facturas"
+          TopLeft="484,208" />
+        <EdgeLayout
+          Id="Package\datawarehouse.PrecedenceConstraints[Restricción 5]"
+          TopLeft="165,158.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="345.333333333333,49.5"
+              Start="0,0"
+              End="345.333333333333,42">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.1078767123288" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.1078767123288"
+                    Point2="0,36.1078767123288"
+                    Point3="4,36.1078767123288" />
+                  <mssgle:LineSegment
+                    End="341.333333333333,36.1078767123288" />
+                  <mssgle:CubicBezierSegment
+                    Point1="341.333333333333,36.1078767123288"
+                    Point2="345.333333333333,36.1078767123288"
+                    Point3="345.333333333333,40.1078767123288" />
+                  <mssgle:LineSegment
+                    End="345.333333333333,42" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\datawarehouse.PrecedenceConstraints[Restricción 6]"
+          TopLeft="371,158.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="161.666666666667,49.5"
+              Start="0,0"
+              End="161.666666666667,42">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.3690807799443" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.3690807799443"
+                    Point2="0,29.3690807799443"
+                    Point3="4,29.3690807799443" />
+                  <mssgle:LineSegment
+                    End="157.666666666667,29.3690807799443" />
+                  <mssgle:CubicBezierSegment
+                    Point1="157.666666666667,29.3690807799443"
+                    Point2="161.666666666667,29.3690807799443"
+                    Point3="161.666666666667,33.3690807799443" />
+                  <mssgle:LineSegment
+                    End="161.666666666667,42" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\datawarehouse.PrecedenceConstraints[Restricción 7]"
+          TopLeft="574,158.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-19,49.5"
+              Start="0,0"
+              End="-19,42">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.75"
+                    Point2="0,24.75"
+                    Point3="-4,24.75" />
+                  <mssgle:LineSegment
+                    End="-15,24.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-15,24.75"
+                    Point2="-19,24.75"
+                    Point3="-19,28.75" />
+                  <mssgle:LineSegment
+                    End="-19,42" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\datawarehouse.PrecedenceConstraints[Restricción 8]"
+          TopLeft="769,158.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-191.666666666667,49.5"
+              Start="0,0"
+              End="-191.666666666667,42">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.3690807799443" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.3690807799443"
+                    Point2="0,29.3690807799443"
+                    Point3="-4,29.3690807799443" />
+                  <mssgle:LineSegment
+                    End="-187.666666666667,29.3690807799443" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-187.666666666667,29.3690807799443"
+                    Point2="-191.666666666667,29.3690807799443"
+                    Point3="-191.666666666667,33.3690807799443" />
+                  <mssgle:LineSegment
+                    End="-191.666666666667,42" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\datawarehouse.PrecedenceConstraints[Restricción 9]"
+          TopLeft="973,158.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-373.333333333333,49.5"
+              Start="0,0"
+              End="-373.333333333333,42">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.1078767123287" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.1078767123287"
+                    Point2="0,36.1078767123287"
+                    Point3="-4,36.1078767123287" />
+                  <mssgle:LineSegment
+                    End="-369.333333333333,36.1078767123287" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-369.333333333333,36.1078767123287"
+                    Point2="-373.333333333333,36.1078767123287"
+                    Point3="-373.333333333333,40.1078767123287" />
+                  <mssgle:LineSegment
+                    End="-373.333333333333,42" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9716,8 +11312,8 @@ FROM sales.prices;</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="1054,222"
-          Size="1054,266"
+          PanelSize="1261,385"
+          Size="1261,428"
           Id="Package\datawarehouse"
           TopLeft="60,663" />
         <NodeLayout
@@ -9732,6 +11328,10 @@ FROM sales.prices;</property>
           Size="145,42"
           Id="Package\intermedia\int_productos"
           TopLeft="5.5,107.5" />
+        <NodeLayout
+          Size="127,42"
+          Id="Package\intermedia\int_region"
+          TopLeft="801.5,107.5" />
         <NodeLayout
           Size="130,42"
           Id="Package\intermedia\int_tiempo"
@@ -9864,10 +11464,6 @@ FROM sales.prices;</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="127,42"
-          Id="Package\intermedia\int_region"
-          TopLeft="801.5,107.5" />
         <EdgeLayout
           Id="Package\intermedia.PrecedenceConstraints[Restricción 5]"
           TopLeft="516.333333333333,47.4999999999999">
@@ -9902,11 +11498,49 @@ FROM sales.prices;</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="114,42"
+          Id="Package\intermedia\int_fact"
+          TopLeft="969,104" />
+        <EdgeLayout
+          Id="Package\intermedia.PrecedenceConstraints[Restricción 3]"
+          TopLeft="519.357142857143,47.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="506.642857142857,56.5000000000001"
+              Start="0,0"
+              End="506.642857142857,49.0000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.9561752988048" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.9561752988048"
+                    Point2="0,13.9561752988048"
+                    Point3="4,13.9561752988048" />
+                  <mssgle:LineSegment
+                    End="502.642857142857,13.9561752988048" />
+                  <mssgle:CubicBezierSegment
+                    Point1="502.642857142857,13.9561752988048"
+                    Point2="506.642857142857,13.9561752988048"
+                    Point3="506.642857142857,17.9561752988048" />
+                  <mssgle:LineSegment
+                    End="506.642857142857,49.0000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="934,204"
-          Size="934,248"
+          PanelSize="1154,205"
+          Size="1154,248"
           Id="Package\intermedia"
           TopLeft="105.222222222222,383.75" />
         <NodeLayout
@@ -10029,9 +11663,9 @@ FROM sales.prices;</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="227,59.9999999999999"
+              EndConnector="227,60"
               Start="0,0"
-              End="227,52.4999999999999">
+              End="227,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -10048,7 +11682,7 @@ FROM sales.prices;</property>
                     Point2="227,24.4247787610619"
                     Point3="227,28.4247787610619" />
                   <mssgle:LineSegment
-                    End="227,52.4999999999999" />
+                    End="227,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10063,26 +11697,26 @@ FROM sales.prices;</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="440,59.9999999999999"
+              EndConnector="440,60"
               Start="0,0"
-              End="440,52.4999999999999">
+              End="440,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.3043478260869" />
+                    End="0,12.304347826087" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,12.3043478260869"
-                    Point2="0,16.3043478260869"
-                    Point3="4,16.3043478260869" />
+                    Point1="0,12.304347826087"
+                    Point2="0,16.304347826087"
+                    Point3="4,16.304347826087" />
                   <mssgle:LineSegment
-                    End="436,16.3043478260869" />
+                    End="436,16.304347826087" />
                   <mssgle:CubicBezierSegment
-                    Point1="436,16.3043478260869"
-                    Point2="440,16.3043478260869"
-                    Point3="440,20.3043478260869" />
+                    Point1="436,16.304347826087"
+                    Point2="440,16.304347826087"
+                    Point3="440,20.304347826087" />
                   <mssgle:LineSegment
-                    End="440,52.4999999999999" />
+                    End="440,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10094,36 +11728,36 @@ FROM sales.prices;</property>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="1159,204"
+          PanelSize="1159,205"
           Size="1159,248"
           Id="Package\staging"
-          TopLeft="2.5,101.5" />
+          TopLeft="30.5,98.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción]"
-          TopLeft="582,349.5">
+          TopLeft="610,346.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-9.77777777777806,34.25"
+              EndConnector="72.2222222222219,37.25"
               Start="0,0"
-              End="-9.77777777777806,26.75">
+              End="72.2222222222219,29.75">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.125" />
+                    End="0,14.625" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,13.125"
-                    Point2="0,17.125"
-                    Point3="-4,17.125" />
+                    Point1="0,14.625"
+                    Point2="0,18.625"
+                    Point3="4,18.625" />
                   <mssgle:LineSegment
-                    End="-5.77777777777806,17.125" />
+                    End="68.2222222222219,18.625" />
                   <mssgle:CubicBezierSegment
-                    Point1="-5.77777777777806,17.125"
-                    Point2="-9.77777777777806,17.125"
-                    Point3="-9.77777777777806,21.125" />
+                    Point1="68.2222222222219,18.625"
+                    Point2="72.2222222222219,18.625"
+                    Point3="72.2222222222219,22.625" />
                   <mssgle:LineSegment
-                    End="-9.77777777777806,26.75" />
+                    End="72.2222222222219,29.75" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10134,13 +11768,13 @@ FROM sales.prices;</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Restricción 1]"
-          TopLeft="572.222222222222,631.75">
+          TopLeft="682.222222222222,631.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="14.7777777777781,31.25"
+              EndConnector="8.27777777777806,31.25"
               Start="0,0"
-              End="14.7777777777781,23.75">
+              End="8.27777777777806,23.75">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -10151,13 +11785,13 @@ FROM sales.prices;</property>
                     Point2="0,15.625"
                     Point3="4,15.625" />
                   <mssgle:LineSegment
-                    End="10.7777777777781,15.625" />
+                    End="4.27777777777806,15.625" />
                   <mssgle:CubicBezierSegment
-                    Point1="10.7777777777781,15.625"
-                    Point2="14.7777777777781,15.625"
-                    Point3="14.7777777777781,19.625" />
+                    Point1="4.27777777777806,15.625"
+                    Point2="8.27777777777806,15.625"
+                    Point3="8.27777777777806,19.625" />
                   <mssgle:LineSegment
-                    End="14.7777777777781,23.75" />
+                    End="8.27777777777806,23.75" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10169,6 +11803,275 @@ FROM sales.prices;</property>
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\datawarehouse\dim_clientes">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="161,42"
+          Id="Package\datawarehouse\dim_clientes\int_clientes_G13"
+          TopLeft="150,129" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\datawarehouse\dim_clientes\dim_clientes_G13"
+          TopLeft="140,250" />
+        <EdgeLayout
+          Id="Package\datawarehouse\dim_clientes.Paths[Salida de origen de ADO NET]"
+          TopLeft="227,171">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,79"
+              Start="0,0"
+              End="0,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\datawarehouse\dim_clientes\int_clientes_G13">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\datawarehouse\dim_empleado">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\datawarehouse\dim_empleado\int_empleados_G13"
+          TopLeft="174,75" />
+        <NodeLayout
+          Size="204,42"
+          Id="Package\datawarehouse\dim_empleado\dim_empleados_G13"
+          TopLeft="162,196" />
+        <EdgeLayout
+          Id="Package\datawarehouse\dim_empleado.Paths[Salida de origen de ADO NET]"
+          TopLeft="263.25,117">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,79"
+              Start="0,0"
+              End="0,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\datawarehouse\dim_empleado\int_empleados_G13">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\datawarehouse\dim_productos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="166,42"
+          Id="Package\datawarehouse\dim_productos\int_products_G13"
+          TopLeft="200,119" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\datawarehouse\dim_productos\dim_productos_G13"
+          TopLeft="204,271" />
+        <EdgeLayout
+          Id="Package\datawarehouse\dim_productos.Paths[Salida de origen de ADO NET]"
+          TopLeft="283,161">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10,110"
+              Start="0,0"
+              End="10,102.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,51"
+                    Point2="0,55"
+                    Point3="4,55" />
+                  <mssgle:LineSegment
+                    End="6,55" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6,55"
+                    Point2="10,55"
+                    Point3="10,59" />
+                  <mssgle:LineSegment
+                    End="10,102.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\datawarehouse\dim_productos\int_products_G13">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\datawarehouse\dim_region">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="154,42"
+          Id="Package\datawarehouse\dim_region\int_region_G13"
+          TopLeft="301,170" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\datawarehouse\dim_region\dim_region_G13"
+          TopLeft="305,275" />
+        <EdgeLayout
+          Id="Package\datawarehouse\dim_region.Paths[Salida de origen de ADO NET]"
+          TopLeft="381.5,212">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63"
+              Start="0,0"
+              End="0,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv"
+          ParentId="Package\datawarehouse\dim_region"
+          FontInfo="{assembly:Null}"
+          Size="272,NaN"
+          Id="6fbd8768-c3f5-47d4-8031-288ea744459f"
+          TopLeft="752,420" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\datawarehouse\dim_region\dim_region_G13">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\datawarehouse\dim_region\int_region_G13">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\datawarehouse\dim_tiempo">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\datawarehouse\dim_tiempo\int_tiempo_G13"
+          TopLeft="191,74" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\datawarehouse\dim_tiempo\dim_tiempo_G13"
+          TopLeft="185,188" />
+        <EdgeLayout
+          Id="Package\datawarehouse\dim_tiempo.Paths[Salida de origen de ADO NET]"
+          TopLeft="268,116">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,72"
+              Start="0,0"
+              End="0,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\datawarehouse\dim_tiempo\dim_tiempo_G13">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\datawarehouse\dim_tiempo\int_tiempo_G13">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\intermedia\int_clientes">
     <LayoutInfo>
@@ -10399,11 +12302,15 @@ FROM sales.prices;</property>
     design-time-name="Package\intermedia\int_employee">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="180,42"
           Id="Package\intermedia\int_employee\stg_employees_G13"
           TopLeft="35.5,35.5" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\intermedia\int_employee\int_empleados_G13"
+          TopLeft="43,249" />
         <NodeLayout
           Size="180,42"
           Id="Package\intermedia\int_employee\Conversión de datos"
@@ -10427,13 +12334,11 @@ FROM sales.prices;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="177,42"
-          Id="Package\intermedia\int_employee\int_empleados_G13"
-          TopLeft="43,249" />
         <EdgeLayout
           Id="Package\intermedia\int_employee.Paths[Salida de conversión de datos]"
           TopLeft="127.75,189">
@@ -10453,7 +12358,9 @@ FROM sales.prices;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10461,6 +12368,14 @@ FROM sales.prices;</property>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\intermedia\int_employee\stg_employees_G13">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\intermedia\int_employee\int_empleados_G13">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -10605,10 +12520,106 @@ FROM sales.prices;</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\intermedia\int_region">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\intermedia\int_region\stg_region_G13"
+          TopLeft="112,55" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\intermedia\int_region\int_region_G13"
+          TopLeft="118,264" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\intermedia\int_region\Conversión de datos"
+          TopLeft="109,170" />
+        <EdgeLayout
+          Id="Package\intermedia\int_region.Paths[Salida de origen de ADO NET]"
+          TopLeft="190.5,97">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.5,73"
+              Start="0,0"
+              End="8.5,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,32.5"
+                    Point2="0,36.5"
+                    Point3="4,36.5" />
+                  <mssgle:LineSegment
+                    End="4.5,36.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.5,36.5"
+                    Point2="8.5,36.5"
+                    Point3="8.5,40.5" />
+                  <mssgle:LineSegment
+                    End="8.5,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\intermedia\int_region.Paths[Salida de conversión de datos]"
+          TopLeft="197,212">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\intermedia\int_region\stg_region_G13">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\intermedia\int_region\int_region_G13">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\staging\Cargar Tablas Excel">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="180,42"
           Id="Package\staging\Cargar Tablas Excel\stg_employees_G13"
@@ -10656,7 +12667,9 @@ FROM sales.prices;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10690,7 +12703,9 @@ FROM sales.prices;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10752,7 +12767,7 @@ FROM sales.prices;</property>
     design-time-name="Package\staging\Cargar Tablas Mysql">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="160,42"
           Id="Package\staging\Cargar Tablas Mysql\stg_mysql_biling"
@@ -10804,7 +12819,9 @@ FROM sales.prices;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10826,7 +12843,9 @@ FROM sales.prices;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10848,7 +12867,9 @@ FROM sales.prices;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10870,7 +12891,9 @@ FROM sales.prices;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -11037,7 +13060,7 @@ FROM sales.prices;</property>
     design-time-name="Package\staging\Cargar Tablas TXT">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="152,42"
           Id="Package\staging\Cargar Tablas TXT\stg_stock_G13"
@@ -11093,7 +13116,9 @@ FROM sales.prices;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11127,7 +13152,9 @@ FROM sales.prices;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11161,7 +13188,9 @@ FROM sales.prices;</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -11292,124 +13321,32 @@ FROM sales.prices;</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\intermedia\int_region">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="157,42"
-          Id="Package\intermedia\int_region\stg_region_G13"
-          TopLeft="112,55" />
-        <NodeLayout
-          Size="180,42"
-          Id="Package\intermedia\int_region\Conversión de datos"
-          TopLeft="109,170" />
-        <EdgeLayout
-          Id="Package\intermedia\int_region.Paths[Salida de origen de ADO NET]"
-          TopLeft="190.5,97">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="8.5,73"
-              Start="0,0"
-              End="8.5,65.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.5"
-                    Point2="0,36.5"
-                    Point3="4,36.5" />
-                  <mssgle:LineSegment
-                    End="4.5,36.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4.5,36.5"
-                    Point2="8.5,36.5"
-                    Point3="8.5,40.5" />
-                  <mssgle:LineSegment
-                    End="8.5,65.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="154,42"
-          Id="Package\intermedia\int_region\int_region_G13"
-          TopLeft="118,264" />
-        <EdgeLayout
-          Id="Package\intermedia\int_region.Paths[Salida de conversión de datos]"
-          TopLeft="197,212">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52"
-              Start="0,0"
-              End="0,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\intermedia\int_region\stg_region_G13">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\intermedia\int_region\int_region_G13">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\datawarehouse\dim_productos">
+    design-time-name="Package\intermedia\int_fact">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="166,42"
-          Id="Package\datawarehouse\dim_productos\int_products_G13"
-          TopLeft="200,119" />
+          Size="128,42"
+          Id="Package\intermedia\int_fact\stg_billing"
+          TopLeft="232,198" />
         <NodeLayout
-          Size="178,42"
-          Id="Package\datawarehouse\dim_productos\dim_productos_G13"
-          TopLeft="200,230" />
+          Size="141,42"
+          Id="Package\intermedia\int_fact\int_fact_G13"
+          TopLeft="229,305" />
         <EdgeLayout
-          Id="Package\datawarehouse\dim_productos.Paths[Salida de origen de ADO NET]"
-          TopLeft="286,161">
+          Id="Package\intermedia\int_fact.Paths[Salida de origen de ADO NET]"
+          TopLeft="297.75,240">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,69"
+              EndConnector="0,65"
               Start="0,0"
-              End="0,61.5">
+              End="0,57.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,61.5" />
+                    End="0,57.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11418,11 +13355,26 @@ FROM sales.prices;</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv"
+          ParentId="Package\intermedia\int_fact"
+          FontInfo="{assembly:Null}"
+          Size="1517,60"
+          Id="c7a7b25b-d376-4f04-a64f-c5c2f311f364"
+          TopLeft="113,24" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\datawarehouse\dim_productos\int_products_G13">
+    design-time-name="Package\intermedia\int_fact\stg_billing">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\intermedia\int_fact\int_fact_G13">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11437,46 +13389,8 @@ FROM sales.prices;</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\datawarehouse\dim_clientes">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="161,42"
-          Id="Package\datawarehouse\dim_clientes\int_clientes_G13"
-          TopLeft="150,129" />
-        <NodeLayout
-          Size="167,42"
-          Id="Package\datawarehouse\dim_clientes\dim_clientes_G13"
-          TopLeft="146,251" />
-        <EdgeLayout
-          Id="Package\datawarehouse\dim_clientes.Paths[Salida de origen de ADO NET]"
-          TopLeft="230,171">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,80"
-              Start="0,0"
-              End="0,72.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,72.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\datawarehouse\dim_clientes\int_clientes_G13">
+    design-time-name="Package\datawarehouse\dim_empleado\dim_empleados_G13">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11492,93 +13406,32 @@ FROM sales.prices;</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\datawarehouse\dim_region">
+    design-time-name="Package\datawarehouse\fact_facturas">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="154,42"
-          Id="Package\datawarehouse\dim_region\int_region_G13"
-          TopLeft="301,170" />
+          Size="114,42"
+          Id="Package\datawarehouse\fact_facturas\int_fact"
+          TopLeft="322,100" />
         <NodeLayout
-          Size="160,42"
-          Id="Package\datawarehouse\dim_region\dim_region_G13"
-          TopLeft="305,275" />
+          Size="169,42"
+          Id="Package\datawarehouse\fact_facturas\fact_facturas_G13"
+          TopLeft="300,212" />
         <EdgeLayout
-          Id="Package\datawarehouse\dim_region.Paths[Salida de origen de ADO NET]"
-          TopLeft="381.5,212">
+          Id="Package\datawarehouse\fact_facturas.Paths[Salida de origen de ADO NET]"
+          TopLeft="381.75,142">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,63"
+              EndConnector="0,70"
               Start="0,0"
-              End="0,55.5">
+              End="0,62.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,55.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <AnnotationLayout
-          Text="vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv"
-          ParentId="Package\datawarehouse\dim_region"
-          FontInfo="{assembly:Null}"
-          Size="272,60"
-          Id="6fbd8768-c3f5-47d4-8031-288ea744459f"
-          TopLeft="752,420" />
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\datawarehouse\dim_region\int_region_G13">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\datawarehouse\dim_region\dim_region_G13">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\datawarehouse\dim_tiempo">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="157,42"
-          Id="Package\datawarehouse\dim_tiempo\int_tiempo_G13"
-          TopLeft="191,74" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\datawarehouse\dim_tiempo\dim_tiempo_G13"
-          TopLeft="185,188" />
-        <EdgeLayout
-          Id="Package\datawarehouse\dim_tiempo.Paths[Salida de origen de ADO NET]"
-          TopLeft="268,116">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,72"
-              Start="0,0"
-              End="0,64.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,64.5" />
+                    End="0,62.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11591,7 +13444,7 @@ FROM sales.prices;</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\datawarehouse\dim_tiempo\int_tiempo_G13">
+    design-time-name="Package\datawarehouse\fact_facturas\int_fact">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11599,69 +13452,7 @@ FROM sales.prices;</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\datawarehouse\dim_tiempo\dim_tiempo_G13">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\intermedia\int_employee\int_empleados_G13">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\datawarehouse\dim_empleado">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="177,42"
-          Id="Package\datawarehouse\dim_empleado\int_empleados_G13"
-          TopLeft="174,75" />
-        <NodeLayout
-          Size="184,42"
-          Id="Package\datawarehouse\dim_empleado\dim_empleados_G13"
-          TopLeft="174,195" />
-        <EdgeLayout
-          Id="Package\datawarehouse\dim_empleado.Paths[Salida de origen de ADO NET]"
-          TopLeft="264.25,117">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,78"
-              Start="0,0"
-              End="0,70.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,70.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\datawarehouse\dim_empleado\int_empleados_G13">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\datawarehouse\dim_empleado\dim_empleados_G13">
+    design-time-name="Package\datawarehouse\fact_facturas\fact_facturas_G13">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
